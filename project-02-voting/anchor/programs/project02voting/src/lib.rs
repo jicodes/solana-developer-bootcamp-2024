@@ -33,15 +33,25 @@ pub mod voting {
     ) -> Result<()> {
 
       let candidate = &mut ctx.accounts.candidate;
-      let poll = &mut ctx.accounts.poll;
-      poll.candidate_amount += 1;
-
       candidate.candidate_name = candidate_name;
       candidate.candidate_votes = 0;
+
+      let poll = &mut ctx.accounts.poll;
+      poll.candidate_amount += 1;
 
       Ok(())
     }
 
+    pun fn vote(
+      ctx: Context<Vote>,
+      candidate_name: String,
+      poll_id: u64,
+    ) -> Result<()> {
+      let candidate = &mut ctx.accounts.candidate;
+      candidate.candidate_votes += 1;
+
+      Ok(())
+    }
 }
 
 #[derive(Accounts)]
