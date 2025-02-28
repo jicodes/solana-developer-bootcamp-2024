@@ -12,17 +12,23 @@ const votingAddress = new PublicKey(
 );
 
 describe("voting", () => {
-  it("Initialize Poll", async () => {
+  let context;
+  let provider;
+  let votingProgram: Program<Voting>;
+
+  beforeAll(async () => {
     // Configure solana bankrun provider
-    const context = await startAnchor(
+    context = await startAnchor(
       "",
       [{ name: "voting", programId: votingAddress }],
       [],
     );
-    const provider = new BankrunProvider(context);
+    provider = new BankrunProvider(context);
 
-    const votingProgram = new Program<Voting>(IDL, provider);
+    votingProgram = new Program<Voting>(IDL, provider);
+  });
 
+  it("Initialize Poll", async () => {
     await votingProgram.methods
       .initializePoll(
         new BN(1),
@@ -48,4 +54,27 @@ describe("voting", () => {
     expect(poll.pollStart.toNumber()).toEqual(0);
     expect(poll.pollEnd.toNumber()).toEqual(1840718903);
   });
+
+  it("Initialize Candidate", async () => {
+    await votingProgram.methods.initializeCandidate("red", new BN(1)).rpc();
+    await votingProgram.methods.initializeCandidate("blue", new BN(1)).rpc();
+
+    const [redAddress] = PublicKey.findProgramAddressSync(
+      [new BN(1).toArrayLike(Buffer, 'le', 8), Buffer.from("red")],
+      votingAddress,
+    );
+    const [blueAddress] = PublicKey.findProgramAddressSync(
+      [new BN(1).toArrayLike(Buffer, 'le', 8), Buffer.from("blue")],
+      votingAddress,
+    );
+
+    const redCandidate = await votingProgram.account.candidate.fetch(redAddress); 
+    const blueCandidate = await votingProgram.account.candidate.fetch(blueAddress);
+    console.log("redCandidate:", redCandidate);
+    console.log("blueCandidate:", blueCandidate);
+    expect(redCandidate.candidateVotes.toNumber()).toEqual(0);
+    expect(blueCandidate.candidateVotes.toNumber()).toEqual(0);
+  });
+
+  it("Vote", async () => {});
 });
