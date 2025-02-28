@@ -42,7 +42,7 @@ pub mod voting {
       Ok(())
     }
 
-    pun fn vote(
+    pub fn vote(
       ctx: Context<Vote>,
       candidate_name: String,
       poll_id: u64,
@@ -89,6 +89,7 @@ pub struct InitializeCandidate<'info> {
   #[account(mut)]
   pub signer: Signer<'info>,
   #[account(
+    mut
     seeds = [poll_id.to_le_bytes().as_ref()],
     bump
   )]
@@ -112,3 +113,23 @@ pub struct Candidate {
   pub candidate_name: String,
   pub candidate_votes: u64,
 }
+
+#[derive(Accounts)]
+#[instruction(candidate_name: String, poll_id: u64)]
+pub struct Vote<'info> {
+  pub signer: Signer<'info>,
+  #[account(
+    seeds = [poll_id.to_le_bytes().as_ref()],
+    bump
+  )]
+  pub poll: Account<'info, Poll>,
+  #[account(
+    mut,
+    seeds = [poll_id.to_le_bytes().as_ref(), candidate_name.as_bytes()],
+    bump
+  )]
+  pub candidate: Account<'info, Candidate>,
+}
+
+
+

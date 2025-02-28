@@ -60,21 +60,38 @@ describe("voting", () => {
     await votingProgram.methods.initializeCandidate("blue", new BN(1)).rpc();
 
     const [redAddress] = PublicKey.findProgramAddressSync(
-      [new BN(1).toArrayLike(Buffer, 'le', 8), Buffer.from("red")],
+      [new BN(1).toArrayLike(Buffer, "le", 8), Buffer.from("red")],
       votingAddress,
     );
     const [blueAddress] = PublicKey.findProgramAddressSync(
-      [new BN(1).toArrayLike(Buffer, 'le', 8), Buffer.from("blue")],
+      [new BN(1).toArrayLike(Buffer, "le", 8), Buffer.from("blue")],
       votingAddress,
     );
 
-    const redCandidate = await votingProgram.account.candidate.fetch(redAddress); 
-    const blueCandidate = await votingProgram.account.candidate.fetch(blueAddress);
+    const redCandidate = await votingProgram.account.candidate.fetch(
+      redAddress,
+    );
+    const blueCandidate = await votingProgram.account.candidate.fetch(
+      blueAddress,
+    );
     console.log("redCandidate:", redCandidate);
     console.log("blueCandidate:", blueCandidate);
     expect(redCandidate.candidateVotes.toNumber()).toEqual(0);
     expect(blueCandidate.candidateVotes.toNumber()).toEqual(0);
   });
 
-  it("Vote", async () => {});
+  it("Vote", async () => {
+    await votingProgram.methods
+    .vote("red", new BN(1))
+    .rpc();
+
+    const [redAddress] = PublicKey.findProgramAddressSync(
+      [new BN(1).toArrayLike(Buffer, "le", 8), Buffer.from("red")],
+      votingAddress,
+    );
+    const redCandidate = await votingProgram.account.candidate.fetch(
+      redAddress,
+    );
+    expect(redCandidate.candidateVotes.toNumber()).toEqual(1);
+  });
 });
