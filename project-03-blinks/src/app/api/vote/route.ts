@@ -23,12 +23,12 @@ export async function GET(request: Request) {
     links: {
       actions: [
         {
-          type: "transaction",
+          type: "post",
           label: "Vote for red",
           href: "/api/vote?candidate=red",
         },
         {
-          type: "transaction",
+          type: "post",
           label: "Vote for blue",
           href: "/api/vote?candidate=blue",
         },
@@ -75,11 +75,12 @@ export async function POST(request: Request) {
     lastValidBlockHeight: blockhash.lastValidBlockHeight,
   }).add(instruction);
 
+
   const payload = await createPostResponse({
     fields: {
       type: "transaction",
       transaction: transaction
-    },
+    }
   });
 
   return Response.json(payload, { headers: ACTIONS_CORS_HEADERS });
