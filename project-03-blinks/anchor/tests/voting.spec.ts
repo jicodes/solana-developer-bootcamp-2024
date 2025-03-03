@@ -5,28 +5,31 @@ import { BN, Program } from "@coral-xyz/anchor";
 import { Voting } from "../target/types/voting";
 const IDL = require("../target/idl/voting.json");
 
-import { BankrunProvider, startAnchor } from "anchor-bankrun";
+// import { BankrunProvider, startAnchor } from "anchor-bankrun";
 
 const votingAddress = new PublicKey(
   "EDc2Q25Nenvp1rhEDkQnUmCi7YzeYwLBWuaeXRweVmZu",
 );
 
 describe("voting", () => {
-  let context;
-  let provider;
-  let votingProgram: Program<Voting>;
 
-  beforeAll(async () => {
-    // Configure solana bankrun provider
-    context = await startAnchor(
-      "",
-      [{ name: "voting", programId: votingAddress }],
-      [],
-    );
-    provider = new BankrunProvider(context);
+  // Configure the client to use the local cluster
+  anchor.setProvider(anchor.AnchorProvider.env());
+  let votingProgram = anchor.workspace.Voting as Program<Voting>;
+  
+  //   // Configure solana bankrun provider
+  // let context;
+  // let provider;
+  // beforeAll(async () => {
+  //   context = await startAnchor(
+  //     "",
+  //     [{ name: "voting", programId: votingAddress }],
+  //     [],
+  //   );
+  //   provider = new BankrunProvider(context);
 
-    votingProgram = new Program<Voting>(IDL, provider);
-  });
+  //   votingProgram = new Program<Voting>(IDL, provider);
+  // });
 
   it("Initialize Poll", async () => {
     await votingProgram.methods
