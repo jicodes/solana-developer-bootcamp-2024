@@ -22,6 +22,9 @@ pub mod crudapp {
         Ok(())
     }
 
+    pub fn delete_journal_entry(_ctx: Context<DeleteEntry>, _tilte: String) -> Result<> {
+        Ok(())
+    }
   
 }
 
@@ -71,3 +74,17 @@ pub struct UpdateEntry<'info> {
     
     pub system_program: Program<'info, System>,
 }
+
+#[derive(Accounts)]
+#[instruction(title: String)]
+pub struct DeleteEntry<'info> {
+    #[account(mut)]
+    pub owner: Signer<'info>,
+    #[account(
+      mut,
+      seeds = [title.as_bytes(), owner.key.as_ref()],
+      bump,
+      close = owner, // Close the account
+    )]
+    pub journal_entry: Account<'info, JournalEntryState>,
+    pub system_program: Program<'info, System>,
