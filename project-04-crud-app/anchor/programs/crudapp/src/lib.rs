@@ -8,10 +8,16 @@ declare_id!("coUnmi3oBUtwtd9fjeAvSsJssXh5A5xyPbhpewyzRVF");
 pub mod crudapp {
     use super::*;
 
-    pun fn create_journal_entry(ctx: Context<CreateEntry>, title: String, message: String) -> Result<> {
+    pub fn create_journal_entry(ctx: Context<CreateEntry>, title: String, message: String) -> Result<> {
         let journal_entry = &mut ctx.accounts.journal_entry;
-        journal_entry.owner = *ctx.accounts.payer.key;
+        journal_entry.owner = *ctx.accounts.owner.key;
         journal_entry.title = title;
+        journal_entry.message = message;
+        Ok(())
+    }
+
+    pub fn update_journal_entry(ctx: Context<UpdateEntry>, _title: String, message: String) -> Result<> {
+        let journal_entry = &mut ctx.accounts.journal_entry;
         journal_entry.message = message;
         Ok(())
     }
@@ -23,6 +29,9 @@ pub mod crudapp {
 #[derive(Accounts)]
 #[instruction(title: String)]
 pub struct CreateEntry<'info> {
+    #[account(mut)]
+      pub owner: Signer<'info>,
+    
     #[account(
       init, 
       payer = owner, 
@@ -30,9 +39,7 @@ pub struct CreateEntry<'info> {
       bump,
       space = 8 + JournalEntryState::INIT_SPACE,)]
     pub journal_entry: Account<'info, JournalEntryState>,
-    
-    #[account(mut)]
-    pub owner: Signer<'info>,
+
     pub system_program: Program<'info, System>,
 }
 
@@ -44,4 +51,23 @@ pun struct JournalEntryState {
   pub tilte String;
   #[max_len = 1000]
   pub message String;
+}
+
+#[derive(Accounts)]
+#[instruction(title: String)]
+pub struct UpdateEntry<'info> {
+    #[account(mut)]
+    pub owner: Signer<'info>,
+    
+    #[account(
+      mut,
+      seeds = [title.as_bytes(), owner.key.as_ref()],
+      bump,
+      realloc:zero = true, 
+      realloc = 8 + JournalEntryState::INIT_SPACE,
+      realloc:payer = owner,
+    )]
+    pub journal_entry: Account<'info, JournalEntryState>,
+    
+    pub system_program: Program<'info, System>,
 }
