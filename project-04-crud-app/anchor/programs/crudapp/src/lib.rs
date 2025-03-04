@@ -8,7 +8,7 @@ declare_id!("coUnmi3oBUtwtd9fjeAvSsJssXh5A5xyPbhpewyzRVF");
 pub mod crudapp {
     use super::*;
 
-    pub fn create_journal_entry(ctx: Context<CreateEntry>, title: String, message: String) -> Result<> {
+    pub fn create_journal_entry(ctx: Context<CreateEntry>, title: String, message: String) -> Result<()> {
         let journal_entry = &mut ctx.accounts.journal_entry;
         journal_entry.owner = *ctx.accounts.owner.key;
         journal_entry.title = title;
@@ -16,13 +16,13 @@ pub mod crudapp {
         Ok(())
     }
 
-    pub fn update_journal_entry(ctx: Context<UpdateEntry>, _title: String, message: String) -> Result<> {
+    pub fn update_journal_entry(ctx: Context<UpdateEntry>, _title: String, message: String) -> Result<()> {
         let journal_entry = &mut ctx.accounts.journal_entry;
         journal_entry.message = message;
         Ok(())
     }
 
-    pub fn delete_journal_entry(_ctx: Context<DeleteEntry>, _tilte: String) -> Result<> {
+    pub fn delete_journal_entry(_ctx: Context<DeleteEntry>, _tilte: String) -> Result<()> {
         Ok(())
     }
   
@@ -38,9 +38,10 @@ pub struct CreateEntry<'info> {
     #[account(
       init, 
       payer = owner, 
-      seeds = [title.as_bytes(), owner.key.as_ref()],
+      seeds = [title.as_bytes(), owner.key().as_ref()],
       bump,
-      space = 8 + JournalEntryState::INIT_SPACE,)]
+      space = 8 + JournalEntryState::INIT_SPACE,
+    )]
     pub journal_entry: Account<'info, JournalEntryState>,
 
     pub system_program: Program<'info, System>,
@@ -48,12 +49,12 @@ pub struct CreateEntry<'info> {
 
 #[account]
 #[derive(InitSpace)]
-pun struct JournalEntryState {
-  pub owner Pubkey;
-  #[max_len = 50]
-  pub tilte String;
-  #[max_len = 1000]
-  pub message String;
+pub struct JournalEntryState {
+  pub owner: Pubkey,
+  #[max_len(50)]
+  pub title: String,
+  #[max_len(1000)]
+  pub message: String,
 }
 
 #[derive(Accounts)]
@@ -64,11 +65,11 @@ pub struct UpdateEntry<'info> {
     
     #[account(
       mut,
-      seeds = [title.as_bytes(), owner.key.as_ref()],
+      seeds = [title.as_bytes(), owner.key().as_ref()],
       bump,
-      realloc:zero = true, 
       realloc = 8 + JournalEntryState::INIT_SPACE,
-      realloc:payer = owner,
+      realloc::payer = owner,
+      realloc::zero = true,
     )]
     pub journal_entry: Account<'info, JournalEntryState>,
     
@@ -82,9 +83,10 @@ pub struct DeleteEntry<'info> {
     pub owner: Signer<'info>,
     #[account(
       mut,
-      seeds = [title.as_bytes(), owner.key.as_ref()],
+      seeds = [title.as_bytes(), owner.key().as_ref()],
       bump,
       close = owner, // Close the account
     )]
     pub journal_entry: Account<'info, JournalEntryState>,
     pub system_program: Program<'info, System>,
+}
