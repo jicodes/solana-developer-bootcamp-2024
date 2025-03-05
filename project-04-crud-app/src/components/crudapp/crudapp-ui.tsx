@@ -88,8 +88,8 @@ export function CrudappList() {
         </div>
       ) : (
         <div className="text-center">
-          <h2 className={"text-2xl"}>No accounts</h2>
-          No accounts found. Create one above to get started.
+          <h2 className={"text-2xl"}>No journal entry</h2>
+          No journal entry found. Create one above to get started.
         </div>
       )}
     </div>
