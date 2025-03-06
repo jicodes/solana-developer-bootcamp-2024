@@ -7,7 +7,7 @@ use anchor_spl::{
     },
 };
 
-use crate::Offer;
+use crate::{Offer, error::SwapError};
 
 use super::transfer_tokens;
 
@@ -37,6 +37,8 @@ pub struct TakeOffer<'info> {
         associated_token::mint = token_mint_b,
         associated_token::authority = taker,
         associated_token::token_program = token_program,
+        constraint = taker_token_account_b.amount >= offer.token_b_wanted_amount 
+            @ SwapError::InsufficientBalanceB
     )]
     pub taker_token_account_b: InterfaceAccount<'info, TokenAccount>,
 
