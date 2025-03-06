@@ -10,15 +10,16 @@ import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
 import {
   createNft,
   fetchDigitalAsset,
+  findMetadataPda,
   mplTokenMetadata,
+  verifyCollectionV1,
 } from "@metaplex-foundation/mpl-token-metadata";
-import { generateSigner, keypairIdentity, percentAmount } from "@metaplex-foundation/umi";
+import { generateSigner, keypairIdentity, percentAmount, publicKey } from "@metaplex-foundation/umi";
 
 
 const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
 
-// default read from "id.json" 
-const user = await getKeypairFromFile();
+const user = await getKeypairFromFile("user.json");
 
 await airdropIfRequired(
   connection,
@@ -37,27 +38,24 @@ umi.use(keypairIdentity(umiUser));
 
 console.log("set up Umi instance for user"); 
 
-const collectionMint = generateSigner(umi);
-
-const transaction = createNft(umi, {
-  mint: collectionMint,
-  name: "My Collection",
-  symbol: "MC",
-  uri: "https://raw.githubusercontent.com/solana-developers/professional-education/main/labs/sample-nft-collection-offchain-data.json",
-  sellerFeeBasisPoints: percentAmount(0),
-  isCollection: true,
-});
-await transaction.sendAndConfirm(umi);
-
-const createdCollectionNft = await fetchDigitalAsset(
-  umi,
-  collectionMint.publicKey
+const collectionAddress = publicKey(
+  "<YOUR_COLLECTION_ADDRESS_HERE>"
 );
 
+const nftAddress = publicKey("<YOUR_NFT_ADDRESS_HERE>");
+
+const transaction = verifyCollectionV1(umi, {
+  metadata: findMetadataPda(umi, { mint: nftAddress }),
+  collectionMint: collectionAddress,
+  authority: umi.identity,
+});
+
+transaction.sendAndConfirm(umi);
+
 console.log(
-  `Created Collection 📦! Address is ${getExplorerLink(
+  `✅ NFT ${nftAddress} verified as member of collection ${collectionAddress}! See Explorer at ${getExplorerLink(
     "address",
-    createdCollectionNft.mint.publicKey,
+    nftAddress,
     "devnet"
   )}`
 );

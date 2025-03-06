@@ -28,7 +28,7 @@ await airdropIfRequired(
 
 console.log("user public key:", user.publicKey.toBase58());
 
-const umi = await createUmi(connection.rpcEndpoint);
+const umi = createUmi(connection.rpcEndpoint);
 umi.use(mplTokenMetadata());
 
 const umiUser = umi.eddsa.createKeypairFromSecretKey(user.secretKey);
