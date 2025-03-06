@@ -58,7 +58,7 @@ pub fn send_offered_tokens_to_vault(
     transfer_tokens(
         &context.accounts.maker_token_account_a,
         &context.accounts.vault,
-        &token_a_offered_amount,
+        token_a_offered_amount,
         &context.accounts.token_mint_a,
         &context.accounts.maker,
         &context.accounts.token_program,
