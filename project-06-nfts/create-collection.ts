@@ -17,7 +17,8 @@ import { generateSigner, keypairIdentity, percentAmount } from "@metaplex-founda
 
 const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
 
-const user = await getKeypairFromFile("user.json");
+// default read from "id.json" 
+const user = await getKeypairFromFile();
 
 await airdropIfRequired(
   connection,
