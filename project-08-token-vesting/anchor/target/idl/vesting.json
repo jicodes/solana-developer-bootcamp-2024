@@ -8,95 +8,130 @@
   },
   "instructions": [
     {
-      "name": "close",
-      "discriminator": [98, 165, 201, 177, 108, 65, 206, 96],
+      "name": "creating_vesting_account",
+      "discriminator": [
+        172,
+        159,
+        31,
+        234,
+        44,
+        173,
+        157,
+        180
+      ],
       "accounts": [
         {
-          "name": "payer",
+          "name": "singer",
           "writable": true,
           "signer": true
         },
         {
-          "name": "vesting",
-          "writable": true
-        }
-      ],
-      "args": []
-    },
-    {
-      "name": "decrement",
-      "discriminator": [106, 227, 168, 59, 248, 27, 150, 101],
-      "accounts": [
-        {
-          "name": "vesting",
-          "writable": true
-        }
-      ],
-      "args": []
-    },
-    {
-      "name": "increment",
-      "discriminator": [11, 18, 104, 9, 104, 174, 59, 33],
-      "accounts": [
-        {
-          "name": "vesting",
-          "writable": true
-        }
-      ],
-      "args": []
-    },
-    {
-      "name": "initialize",
-      "discriminator": [175, 175, 109, 31, 13, 152, 155, 237],
-      "accounts": [
-        {
-          "name": "payer",
+          "name": "vesting_account",
           "writable": true,
-          "signer": true
+          "pda": {
+            "seeds": [
+              {
+                "kind": "arg",
+                "path": "company_name"
+              }
+            ]
+          }
         },
         {
-          "name": "vesting",
+          "name": "mint"
+        },
+        {
+          "name": "treasury_token_account",
           "writable": true,
-          "signer": true
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  101,
+                  115,
+                  116,
+                  105,
+                  110,
+                  103,
+                  95,
+                  116,
+                  114,
+                  101,
+                  97,
+                  115,
+                  117,
+                  114,
+                  121
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "company_name"
+              }
+            ]
+          }
         },
         {
           "name": "system_program",
           "address": "11111111111111111111111111111111"
-        }
-      ],
-      "args": []
-    },
-    {
-      "name": "set",
-      "discriminator": [198, 51, 53, 241, 116, 29, 126, 194],
-      "accounts": [
+        },
         {
-          "name": "vesting",
-          "writable": true
+          "name": "token_program"
         }
       ],
       "args": [
         {
-          "name": "value",
-          "type": "u8"
+          "name": "company_name",
+          "type": "string"
         }
       ]
     }
   ],
   "accounts": [
     {
-      "name": "Vesting",
-      "discriminator": [255, 176, 4, 245, 188, 253, 124, 25]
+      "name": "VestingAccount",
+      "discriminator": [
+        102,
+        73,
+        10,
+        233,
+        200,
+        188,
+        228,
+        216
+      ]
     }
   ],
   "types": [
     {
-      "name": "Vesting",
+      "name": "VestingAccount",
       "type": {
         "kind": "struct",
         "fields": [
           {
-            "name": "count",
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "treasury_token_account",
+            "type": "pubkey"
+          },
+          {
+            "name": "company_name",
+            "type": "string"
+          },
+          {
+            "name": "treasury_bump",
+            "type": "u8"
+          },
+          {
+            "name": "bump",
             "type": "u8"
           }
         ]

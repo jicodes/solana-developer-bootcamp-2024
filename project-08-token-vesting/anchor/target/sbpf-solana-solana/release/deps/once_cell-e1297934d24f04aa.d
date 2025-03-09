@@ -1,0 +1,8 @@
+/Users/d/web3/solana/solana-developer-bootcamp-2024/project-08-token-vesting/anchor/target/sbpf-solana-solana/release/deps/libonce_cell-e1297934d24f04aa.rmeta: /Users/d/.cargo/registry/src/index.crates.io-6f17d22bba15001f/once_cell-1.19.0/src/lib.rs /Users/d/.cargo/registry/src/index.crates.io-6f17d22bba15001f/once_cell-1.19.0/src/race.rs
+
+/Users/d/web3/solana/solana-developer-bootcamp-2024/project-08-token-vesting/anchor/target/sbpf-solana-solana/release/deps/libonce_cell-e1297934d24f04aa.rlib: /Users/d/.cargo/registry/src/index.crates.io-6f17d22bba15001f/once_cell-1.19.0/src/lib.rs /Users/d/.cargo/registry/src/index.crates.io-6f17d22bba15001f/once_cell-1.19.0/src/race.rs
+
+/Users/d/web3/solana/solana-developer-bootcamp-2024/project-08-token-vesting/anchor/target/sbpf-solana-solana/release/deps/once_cell-e1297934d24f04aa.d: /Users/d/.cargo/registry/src/index.crates.io-6f17d22bba15001f/once_cell-1.19.0/src/lib.rs /Users/d/.cargo/registry/src/index.crates.io-6f17d22bba15001f/once_cell-1.19.0/src/race.rs
+
+/Users/d/.cargo/registry/src/index.crates.io-6f17d22bba15001f/once_cell-1.19.0/src/lib.rs:
+/Users/d/.cargo/registry/src/index.crates.io-6f17d22bba15001f/once_cell-1.19.0/src/race.rs:
