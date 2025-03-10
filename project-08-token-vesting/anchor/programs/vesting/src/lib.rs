@@ -17,7 +17,7 @@ pub mod vesting {
         company_name: String,
     ) -> Result<()> {
         *ctx.accounts.vesting_account = VestingAccount {
-            owner: ctx.accounts.singer.key(),
+            owner: ctx.accounts.signer.key(),
             mint: ctx.accounts.mint.key(),
             treasury_token_account: ctx.accounts.treasury_token_account.key(),
             company_name,
@@ -107,11 +107,11 @@ pub mod vesting {
 #[instruction(company_name: String)]
 pub struct CreateVestingAccount<'info> {
     #[account(mut)]
-    pub singer: Signer<'info>,
+    pub signer: Signer<'info>,
 
     #[account(
         init,
-        payer = singer,
+        payer = signer,
         space = 8 + VestingAccount::INIT_SPACE,
         seeds = [company_name.as_ref()],
         bump,
@@ -121,7 +121,7 @@ pub struct CreateVestingAccount<'info> {
 
     #[account(
         init,
-        payer = singer,
+        payer = signer,
         token::mint = mint,
         token::authority = treasury_token_account,
         seeds = [b"vesting_treasury", company_name.as_bytes()],
