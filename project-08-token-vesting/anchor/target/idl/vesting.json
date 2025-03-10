@@ -258,20 +258,20 @@
       ]
     },
     {
-      "name": "creating_vesting_account",
+      "name": "create_vesting_account",
       "discriminator": [
+        129,
+        178,
+        2,
+        13,
+        217,
         172,
-        159,
-        31,
-        234,
-        44,
-        173,
-        157,
-        180
+        230,
+        218
       ],
       "accounts": [
         {
-          "name": "singer",
+          "name": "signer",
           "writable": true,
           "signer": true
         },
