@@ -12,8 +12,8 @@ declare_id!("coUnmi3oBUtwtd9fjeAvSsJssXh5A5xyPbhpewyzRVF");
 pub mod vesting {
     use super::*;
 
-    pub fn creating_vesting_account(
-        ctx: Context<CreatingVestingAccount>,
+    pub fn create_vesting_account(
+        ctx: Context<CreateVestingAccount>,
         company_name: String,
     ) -> Result<()> {
         *ctx.accounts.vesting_account = VestingAccount {
@@ -105,7 +105,7 @@ pub mod vesting {
 
 #[derive(Accounts)]
 #[instruction(company_name: String)]
-pub struct CreatingVestingAccount<'info> {
+pub struct CreateVestingAccount<'info> {
     #[account(mut)]
     pub singer: Signer<'info>,
 
