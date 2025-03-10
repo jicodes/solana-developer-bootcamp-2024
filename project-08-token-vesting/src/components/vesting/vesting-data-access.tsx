@@ -83,7 +83,7 @@ export function useVestingProgramAccount({ account }: { account: PublicKey }) {
     queryFn: () => program.account.vestingAccount.fetch(account),
   });
 
-  const createEMployeeAccount = useMutation<string, Error, CreateEmployeeArgs>({
+  const createEmployeeAccount = useMutation<string, Error, CreateEmployeeArgs>({
     mutationKey: ["employeeAccount", "create", { cluster }],
     mutationFn: ({ cliffTime, startTime, endTime, totalAmount, beneficiary }) =>
       program.methods
@@ -107,6 +107,6 @@ export function useVestingProgramAccount({ account }: { account: PublicKey }) {
 
   return {
     accountQuery,
-    createEMployeeAccount,
+    createEmployeeAccount,
   };
 }
