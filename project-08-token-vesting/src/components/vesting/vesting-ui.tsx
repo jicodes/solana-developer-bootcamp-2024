@@ -31,26 +31,26 @@ export function VestingCreate() {
   }
 
   return (
-    <div>
+    <div className="">
       <input
         type="text"
         placeholder="Company Name"
         value={companyName}
         onChange={(e) => setCompanyName(e.target.value)}
-        className="input input-bordered w-4 max-w-sm"
+        className="input input-bordered w-full max-w-xs"
       />
       <input
         type="text"
         placeholder="Mint"
         value={mint}
         onChange={(e) => setMint(e.target.value)}
-        className="input input-bordered w-4 max-w-sm"
+        className="input input-bordered w-full max-w-xs"
       />
 
       <button
-        className="btn btn-xs lg:btn-md btn-primary"
-        onClick={() => handleSubmit()}
+        onClick={handleSubmit}
         disabled={createVestingAccount.isPending || !isFormValid}
+        className="btn btn-xs lg:btn-md btn-primary"
       >
         Create new vesting account {createVestingAccount.isPending && "..."}
       </button>
