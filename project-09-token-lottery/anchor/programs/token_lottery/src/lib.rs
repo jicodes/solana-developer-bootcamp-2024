@@ -8,10 +8,10 @@ declare_id!("ASnhJtoQrYMfuW1ApaRY6Cz2KP41YQ1MUorV8qcDW31A");
 pub mod token_lottery {
     use super::*;
 
-    pub fn initialize(ctx: Context<Initialize>, start: u64, end: u64, price: u64) -> Result<()> {
+    pub fn initialize_config(ctx: Context<Initialize>, start: u64, end: u64, price: u64) -> Result<()> {
         ctx.accounts.token_lottery.set_inner(TokenLottery {
             bump: ctx.bumps.token_lottery,
-            winner: 0,
+            winner: u64:MAX,
             winner_chosen: false,
             start_time: start,
             end_time: end,

@@ -11,7 +11,7 @@ describe("token lottery", () => {
 
   const payer = provider.wallet as anchor.Wallet;
 
-  it("It should initialize token lottery", async () => {
+  it("It should initialize token lottery config", async () => {
     const [tokenLotteryKey] = PublicKey.findProgramAddressSync(
       [Buffer.from("token_lottery")],
       program.programId,
