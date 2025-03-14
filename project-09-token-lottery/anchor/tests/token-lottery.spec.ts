@@ -11,14 +11,14 @@ describe("token lottery", () => {
 
   const payer = provider.wallet as anchor.Wallet;
 
-  it("It should initialize token lottery config", async () => {
+  it("It should initialize", async () => {
     const [tokenLotteryKey] = PublicKey.findProgramAddressSync(
       [Buffer.from("token_lottery")],
       program.programId,
     );
 
     const tx = await program.methods
-      .initialize(new BN(0), new BN(1841781313), new BN(1000))
+      .initializeConfig(new BN(0), new BN(1841781313), new BN(1000))
       .accounts({
         payer: payer.publicKey,
       })
