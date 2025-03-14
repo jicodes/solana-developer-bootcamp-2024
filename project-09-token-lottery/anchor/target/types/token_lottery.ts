@@ -14,16 +14,16 @@ export type TokenLottery = {
   },
   "instructions": [
     {
-      "name": "initializeConfig",
+      "name": "createLottery",
       "discriminator": [
-        208,
-        127,
+        242,
+        165,
+        247,
+        119,
+        17,
+        203,
         21,
-        1,
-        194,
-        190,
-        196,
-        70
+        42
       ],
       "accounts": [
         {
@@ -78,16 +78,16 @@ export type TokenLottery = {
       ]
     },
     {
-      "name": "initializeLottery",
+      "name": "createTicketCollection",
       "discriminator": [
-        113,
-        199,
-        243,
-        247,
-        73,
-        217,
-        33,
-        11
+        191,
+        20,
+        255,
+        239,
+        37,
+        120,
+        124,
+        183
       ],
       "accounts": [
         {

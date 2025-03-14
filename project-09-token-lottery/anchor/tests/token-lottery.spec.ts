@@ -18,7 +18,7 @@ describe("token lottery", () => {
     );
 
     const tx = await program.methods
-      .initializeConfig(new BN(0), new BN(1841781313), new BN(1000))
+      .createLottery(new BN(0), new BN(1841781313), new BN(1000))
       .accounts({
         payer: payer.publicKey,
       })
@@ -29,5 +29,9 @@ describe("token lottery", () => {
     console.log("Transaction:", tx);
     const account = await program.account.tokenLottery.fetch(tokenLotteryKey);
     console.log("Created account:", account);
+
+    
+
+
   });
 });

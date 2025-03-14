@@ -35,8 +35,8 @@ pub const URI: &str = "https://img.freepik.com/free-photo/old-used-brown-torn-ti
 pub mod token_lottery {
     use super::*;
 
-    pub fn initialize_config(
-        ctx: Context<InitializeConfig>,
+    pub fn create_lottery(
+        ctx: Context<CreateLottery>,
         start: u64,
         end: u64,
         price: u64,
@@ -56,7 +56,7 @@ pub mod token_lottery {
         Ok(())
     }
 
-    pub fn initialize_lottery(ctx: Context<InitializeLottery>) -> Result<()> {
+    pub fn create_ticket_collection(ctx: Context<CreateTicketCollection>) -> Result<()> {
         // Create PDA signer seeds for collection mint
         let signer_seeds: &[&[&[u8]]] = &[&[
             b"collection_mint".as_ref(),
@@ -146,7 +146,7 @@ pub mod token_lottery {
 }
 
 #[derive(Accounts)]
-pub struct InitializeConfig<'info> {
+pub struct CreateLottery<'info> {
     #[account(mut)]
     pub payer: Signer<'info>,
 
@@ -162,7 +162,7 @@ pub struct InitializeConfig<'info> {
 }
 
 #[derive(Accounts)]
-pub struct InitializeLottery<'info> {
+pub struct CreateTicketCollection<'info> {
     #[account(mut)]
     pub payer: Signer<'info>,
 
