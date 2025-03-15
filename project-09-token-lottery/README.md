@@ -1,96 +1,34 @@
 # legacy-token-lottery
 
-## Getting Started
+# error when running the tests
 
-### Prerequisites
+- AnchorError caused by account: token_metadata_program. Error Code:
+  InvalidProgramExecutable. Error Number: 3009. Error Message: Program account
+  is not executable.
 
-- Node v18.18.0 or higher
+- this is caused we dont have meta data program on local see this
+  [issue](https://solana.stackexchange.com/questions/13206/error-anchorerror-caused-by-account-token-metadata-program-error-code-invali)
+- to fix this see this
+  [article](https://www.quicknode.com/guides/solana-development/accounts-and-data/fork-programs-to-localnet)
 
-- Rust v1.77.2 or higher
-- Anchor CLI 0.30.1 or higher
-- Solana CLI 1.18.17 or higher
+or
 
-### Installation
-
-#### Clone the repo
-
-```shell
-git clone <repo-url>
-cd <repo-name>
+```bash
+solana program dump -um metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s mpl_token_metadata.so
 ```
 
-#### Install Dependencies
+then In `Anchor.toml` file: add the following line:
 
-```shell
-pnpm install
+```toml
+[[test.genesis]]
+address = "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"
+program = "mpl_token_metadata.so"
 ```
 
-#### Start the web app
 
-```
-pnpm dev
-```
+if we don't add it to toml file, we can use this command to load the program to the local
+validator before running the tests
 
-## Apps
-
-### anchor
-
-This is a Solana program written in Rust using the Anchor framework.
-
-#### Commands
-
-You can use any normal anchor commands. Either move to the `anchor` directory and run the `anchor` command or prefix the
-command with `pnpm`, eg: `pnpm anchor`.
-
-#### Sync the program id:
-
-Running this command will create a new keypair in the `anchor/target/deploy` directory and save the address to the
-Anchor config file and update the `declare_id!` macro in the `./src/lib.rs` file of the program.
-
-You will manually need to update the constant in `anchor/lib/counter-exports.ts` to match the new program id.
-
-```shell
-pnpm anchor keys sync
-```
-
-#### Build the program:
-
-```shell
-pnpm anchor-build
-```
-
-#### Start the test validator with the program deployed:
-
-```shell
-pnpm anchor-localnet
-```
-
-#### Run the tests
-
-```shell
-pnpm anchor-test
-```
-
-#### Deploy to Devnet
-
-```shell
-pnpm anchor deploy --provider.cluster devnet
-```
-
-### web
-
-This is a React app that uses the Anchor generated client to interact with the Solana program.
-
-#### Commands
-
-Start the web app
-
-```shell
-pnpm dev
-```
-
-Build the web app
-
-```shell
-pnpm build
+```bash
+solana-local-validator --reset --bpf-program metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s mpl_token_metadata.so
 ```
