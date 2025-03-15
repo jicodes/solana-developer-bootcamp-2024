@@ -208,7 +208,7 @@ pub struct CreateTicketCollection<'info> {
             b"metadata", 
             token_metadata_program.key().as_ref(), 
             collection_mint.key().as_ref(),
-            b"master_edition"
+            b"edition"
         ],
         bump,
         seeds::program = token_metadata_program.key(),
