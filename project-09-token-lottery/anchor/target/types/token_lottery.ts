@@ -347,7 +347,7 @@ export type TokenLottery = {
     {
       "name": "uri",
       "type": "string",
-      "value": "\"https://img.freepik.com/free-photo/old-used-brown-torn-ticket-stub-isolated_1101-3193.jpg\""
+      "value": "\"https://github.com/solana-developers/developer-bootcamp-2024/blob/main/project-9-token-lottery/metadata.json\""
     }
   ]
 };

@@ -29,7 +29,7 @@ pub const NAME: &str = "Token Lottery Ticket #";
 #[constant]
 pub const SYMBOL: &str = "TICKET";
 #[constant]
-pub const URI: &str = "https://img.freepik.com/free-photo/old-used-brown-torn-ticket-stub-isolated_1101-3193.jpg";
+pub const URI: &str = "https://github.com/solana-developers/developer-bootcamp-2024/blob/main/project-9-token-lottery/metadata.json";
 
 #[program]
 pub mod token_lottery {
@@ -219,6 +219,7 @@ pub struct CreateTicketCollection<'info> {
     pub token_program: Interface<'info, TokenInterface>,
     pub token_metadata_program: Program<'info, Metadata>,
     pub associated_token_program: Program<'info, AssociatedToken>,
+    
     pub system_program: Program<'info, System>,
     pub rent: Sysvar<'info, Rent>,
 }
