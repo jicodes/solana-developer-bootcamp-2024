@@ -222,13 +222,6 @@ export type TokenLottery = {
               {
                 "kind": "const",
                 "value": [
-                  109,
-                  97,
-                  115,
-                  116,
-                  101,
-                  114,
-                  95,
                   101,
                   100,
                   105,

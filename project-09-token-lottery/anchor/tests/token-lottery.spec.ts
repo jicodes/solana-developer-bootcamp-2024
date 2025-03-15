@@ -1,8 +1,7 @@
 import * as anchor from "@coral-xyz/anchor";
 import { Program, BN } from "@coral-xyz/anchor";
-import { PublicKey } from "@solana/web3.js";
 import { TokenLottery } from "../target/types/token_lottery";
-import { getAssociatedTokenAddress, TOKEN_PROGRAM_ID } from "@solana/spl-token";
+import { TOKEN_PROGRAM_ID } from "@coral-xyz/anchor/dist/cjs/utils/token";
 
 describe("token lottery", () => {
   // Configure the client to use the local cluster.
@@ -14,14 +13,6 @@ describe("token lottery", () => {
   const program = anchor.workspace.TokenLottery as Program<TokenLottery>;
 
   const wallet = provider.wallet as anchor.Wallet;
-
-  const TOKEN_METADATA_PROGRAM_ID = new anchor.web3.PublicKey(
-    "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s",
-  );
-
-  const ASSOCIATED_TOKEN_PROGRAM_ID = new anchor.web3.PublicKey(
-    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
-  );
 
   it("should create lottery account", async () => {
     const slot = await connection.getSlot();
@@ -36,25 +27,43 @@ describe("token lottery", () => {
     console.log(createLotteryTx);
   });
 
-  it("should create ticket collection", async () => {
-    try {
-      const createTicketCollectionTx = await program.methods
-        .createTicketCollection()
-        .accounts({
-          tokenProgram: TOKEN_PROGRAM_ID,
-        })
-        .signers([])
-        .rpc({
-          skipPreflight: true,
-          commitment: "confirmed",
-        });
+  // it("should create ticket collection", async () => {
+  //   const createTicketCollectionTx = await program.methods
+  //     .createTicketCollection()
+  //     .accounts({
+  //       tokenProgram: TOKEN_PROGRAM_ID,
+  //     })
+  //     .signers([])
+  //     .rpc({
+  //       skipPreflight: true,
+  //       commitment: "confirmed",
+  //     });
 
-      console.log(
-        "Create ticket collection transaction signature:",
-        createTicketCollectionTx,
-      );
-    } catch (error) {
-      console.error("Error creating ticket collection:", error);
-    }
+  //   console.log(
+  //     "Create ticket collection transaction signature:",
+  //     createTicketCollectionTx,
+  //   );
+  // });
+
+  it("should create ticket collection", async () => {
+    const createTicketCollectionIx = await program.methods
+      .createTicketCollection()
+      .accounts({
+        tokenProgram: TOKEN_PROGRAM_ID,
+      })
+      .instruction();
+
+    const blockhashContext = await connection.getLatestBlockhash();
+
+    const tx = new anchor.web3.Transaction({
+      blockhash: blockhashContext.blockhash,
+      lastValidBlockHeight: blockhashContext.lastValidBlockHeight,
+      feePayer: wallet.payer.publicKey,
+    }).add(createTicketCollectionIx);
+
+    const sig = await anchor.web3.sendAndConfirmTransaction(connection, tx, [
+      wallet.payer,
+    ]);
+    console.log(sig);
   });
 });
