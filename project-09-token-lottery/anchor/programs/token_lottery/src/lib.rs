@@ -289,9 +289,9 @@ pub mod token_lottery {
             return Err(ErrorCode::IncorrectRandomnessAccount.into());
         }
         
-        if clock.slot < token_lottery.lottery_end {
+        if clock.slot < token_lottery.end_time {
             msg!("Current slot: {}", clock.slot);
-            msg!("End slot: {}", token_lottery.lottery_end);
+            msg!("End slot: {}", token_lottery.end_time);
             return Err(ErrorCode::LotteryNotCompleted.into());
         }
         require!(token_lottery.winner_chosen == false, ErrorCode::WinnerChosen);
