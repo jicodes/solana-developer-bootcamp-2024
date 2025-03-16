@@ -245,5 +245,30 @@ describe("token lottery", () => {
     );
 
     console.log("Reveal Signature ", revealSignature);
+
+    // claim prize
+
+    const claimIx = await program.methods
+      .claimPrize()
+      .accounts({
+        tokenProgram: TOKEN_PROGRAM_ID,
+      })
+      .instruction();
+
+    const claimBlockHashWithContext = await connection.getLatestBlockhash();
+
+    const claimTx = new anchor.web3.Transaction({
+      feePayer: wallet.payer.publicKey,
+      blockhash: claimBlockHashWithContext.blockhash,
+      lastValidBlockHeight: claimBlockHashWithContext.lastValidBlockHeight,
+    }).add(claimIx);
+
+    const claimSignature = await anchor.web3.sendAndConfirmTransaction(
+      connection,
+      claimTx,
+      [wallet.payer],
+    );
+
+    console.log("Claim prize Signature ", claimSignature);
   });
 });
