@@ -14,6 +14,43 @@ describe("token lottery", () => {
 
   const wallet = provider.wallet as anchor.Wallet;
 
+  async function buyTicket() {
+    const buyTicketIx = await program.methods
+      .buyTicket()
+      .accounts({
+        tokenProgram: TOKEN_PROGRAM_ID,
+      })
+      .instruction();
+
+    const blockhashContext = await connection.getLatestBlockhash();
+
+    // since the CU in a single tx exceeds the default limit(200000),
+    // we need to set the compute budget
+    // Set the compute budget for the transaction.
+    const computeIx = anchor.web3.ComputeBudgetProgram.setComputeUnitLimit({
+      units: 300000,
+    });
+
+    // Set the priority for the transaction.
+    const priorityIx = anchor.web3.ComputeBudgetProgram.setComputeUnitPrice({
+      microLamports: 1,
+    });
+
+    const tx = new anchor.web3.Transaction({
+      blockhash: blockhashContext.blockhash,
+      lastValidBlockHeight: blockhashContext.lastValidBlockHeight,
+      feePayer: wallet.payer.publicKey,
+    })
+      .add(buyTicketIx)
+      .add(computeIx)
+      .add(priorityIx);
+
+    const sig = await anchor.web3.sendAndConfirmTransaction(connection, tx, [
+      wallet.payer,
+    ]);
+    console.log("buy ticket ", sig);
+  }
+
   it("should create lottery account", async () => {
     const slot = await connection.getSlot();
     console.log("Current slot:", slot);
@@ -65,5 +102,7 @@ describe("token lottery", () => {
       wallet.payer,
     ]);
     console.log(sig);
+
+    await buyTicket();
   });
 });
