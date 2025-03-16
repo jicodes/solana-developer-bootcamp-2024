@@ -25,7 +25,7 @@ use anchor_spl::metadata::{
     SetAndVerifySizedCollectionItem,
 };
 
-use switchobard_on_demand::accounts::RandomnessAccountData;
+use switchboard_on_demand::accounts::RandomnessAccountData;
 
 
 declare_id!("ASnhJtoQrYMfuW1ApaRY6Cz2KP41YQ1MUorV8qcDW31A");
@@ -470,11 +470,6 @@ pub struct CommitRandomness<'info> {
     )]
     pub token_lottery: Account<'info, TokenLottery>,
 
-    #[account(
-        mut,
-        seeds = [b"randomness".as_ref()],
-        bump,
-    )]
     /// CHECK: this account is checked by the Switchboard smart contract
     pub randomness_account: UncheckedAccount<'info>,
 
