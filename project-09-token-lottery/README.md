@@ -10,19 +10,20 @@
   [issue](https://solana.stackexchange.com/questions/13206/error-anchorerror-caused-by-account-token-metadata-program-error-code-invali)
 
 # solution
+
 ```bash
-solana program dump -um metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s metadata.so
+solana program dump -u m metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s metadata.so
 ```
 
-Then use this command to load the program to the local
-validator before running the tests
+Then use this command to load the program to the local validator before running
+the tests
 
 ```bash
 solana-test-validator --reset --bpf-program metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s metadata.so
 ```
 
-
 How to use setup-local and start-validator shell script
+
 ```bash
 cd setup
 
@@ -32,3 +33,7 @@ chmod +x start-validator.sh
 ./setup-local.sh
 ./start-validator.sh
 ```
+
+## About randomness using switchboard_on_demand see this
+
+[doc](https://docs.switchboard.xyz/product-documentation/randomness/tutorials/solana-svm)
