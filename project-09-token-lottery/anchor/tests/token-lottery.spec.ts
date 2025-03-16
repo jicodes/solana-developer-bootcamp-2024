@@ -45,7 +45,7 @@ describe("token lottery", () => {
   //   );
   // });
 
-  it("should create ticket collection", async () => {
+  it("should initialize the lottery system", async () => {
     const createTicketCollectionIx = await program.methods
       .createTicketCollection()
       .accounts({

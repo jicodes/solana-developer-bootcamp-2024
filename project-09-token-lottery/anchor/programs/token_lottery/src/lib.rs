@@ -1,6 +1,8 @@
 #![allow(clippy::result_large_err)]
 
 use anchor_lang::prelude::*;
+use anchor_lang::system_program::{transfer, Transfer};
+
 use anchor_spl::{
     associated_token::AssociatedToken,
     token_interface::{Mint, mint_to, MintTo, TokenAccount, TokenInterface},
@@ -19,8 +21,11 @@ use anchor_spl::metadata::{
     CreateMasterEditionV3,
     sign_metadata,
     SignMetadata,
-    
+    set_and_verify_sized_collection_item,
+    SetAndVerifySizedCollectionItem,
 };
+
+
 
 declare_id!("ASnhJtoQrYMfuW1ApaRY6Cz2KP41YQ1MUorV8qcDW31A");
 
@@ -145,7 +150,107 @@ pub mod token_lottery {
     }
 
     pub fn buy_ticket(ctx: Context<BuyTicket>) -> Result<()> {
+        let clock = Clock::get()?;
+        let ticket_name = NAME.to_owned() + &ctx.accounts.token_lottery.total_tickets.to_string();
         
+        if clock.slot < ctx.accounts.token_lottery.start_time || clock.slot > ctx.accounts.token_lottery.end_time {
+            return Err(ErrorCode::LotteryNotOpen.into());
+        }
+
+        // Transfer the ticket price from the payer to the lottery
+        transfer(
+            CpiContext::new(
+                ctx.accounts.token_program.to_account_info(),
+                Transfer {
+                    from: ctx.accounts.payer.to_account_info(),
+                    to: ctx.accounts.token_lottery.to_account_info(),
+                }
+            ),
+            ctx.accounts.token_lottery.ticket_price,
+        )?;
+        
+        let signer_seeds: &[&[&[u8]]] = &[&[
+            b"collection_mint".as_ref(),
+            &[ctx.bumps.collection_mint],
+        ]];
+        // Mint a ticket to the destination account
+        mint_to(
+            CpiContext::new(
+                ctx.accounts.token_program.to_account_info(),
+                MintTo {
+                    mint: ctx.accounts.ticket_mint.to_account_info(),
+                    to: ctx.accounts.destination.to_account_info(),
+                    authority: ctx.accounts.collection_mint.to_account_info(),
+                }
+            ).with_signer(signer_seeds), 
+            1,
+        )?;
+
+        // Create metadata account for the ticket NFT
+        create_metadata_accounts_v3(
+            CpiContext::new(
+                ctx.accounts.token_metadata_program.to_account_info(),
+                CreateMetadataAccountsV3 {
+                    payer: ctx.accounts.payer.to_account_info(),
+                    metadata: ctx.accounts.ticket_metadata.to_account_info(),
+                    mint: ctx.accounts.ticket_mint.to_account_info(),
+                    mint_authority: ctx.accounts.collection_mint.to_account_info(),
+                    update_authority: ctx.accounts.collection_mint.to_account_info(),
+                    system_program: ctx.accounts.system_program.to_account_info(),
+                    rent: ctx.accounts.rent.to_account_info(),
+                }
+            ).with_signer(signer_seeds),
+            DataV2 {
+                name: ticket_name,
+                symbol: SYMBOL.to_string(),
+                uri: URI.to_string(),
+                seller_fee_basis_points: 0,
+                creators: None,
+                collection: None,
+                uses: None,
+            },
+            true, // is_mutable
+            true, // update_authority_is_signer
+            None 
+        )?;
+
+        create_master_edition_v3(
+            CpiContext::new(
+                ctx.accounts.token_metadata_program.to_account_info(),
+                CreateMasterEditionV3 {
+                    payer: ctx.accounts.payer.to_account_info(),
+                    metadata: ctx.accounts.ticket_metadata.to_account_info(),
+                    mint: ctx.accounts.ticket_mint.to_account_info(),
+                    edition: ctx.accounts.ticket_master_edition.to_account_info(),
+                    mint_authority: ctx.accounts.collection_mint.to_account_info(),
+                    update_authority: ctx.accounts.collection_mint.to_account_info(),
+                    token_program: ctx.accounts.token_program.to_account_info(),
+                    system_program: ctx.accounts.system_program.to_account_info(),
+                    rent: ctx.accounts.rent.to_account_info(),
+                }
+            ).with_signer(signer_seeds),
+            Some(0), // Sets max supply to 0 (fixed supply)
+        )?;
+
+        // Verify the ticket NFT
+        set_and_verify_sized_collection_item(
+            CpiContext::new(
+                ctx.accounts.token_metadata_program.to_account_info(),
+                SetAndVerifySizedCollectionItem {
+                    payer: ctx.accounts.payer.to_account_info(),
+                    metadata: ctx.accounts.ticket_metadata.to_account_info(),
+                    collection_authority: ctx.accounts.collection_mint.to_account_info(),
+                    update_authority: ctx.accounts.collection_mint.to_account_info(),
+                    collection_mint: ctx.accounts.collection_mint.to_account_info(),
+                    collection_metadata: ctx.accounts.collection_metadata.to_account_info(),
+                    collection_master_edition: ctx.accounts.collection_master_edition.to_account_info(),
+                }
+            ).with_signer(signer_seeds),
+            None,
+        )?;
+
+        ctx.accounts.token_lottery.total_tickets += 1;
+
         Ok(())
     }
 }
@@ -288,6 +393,33 @@ pub struct BuyTicket<'info> {
     pub ticket_master_edition: UncheckedAccount<'info>,
 
     #[account(
+        mut,
+        seeds = [
+            b"metadata", 
+            token_metadata_program.key().as_ref(), 
+            collection_mint.key().as_ref()
+        ],
+        bump,
+        seeds::program = token_metadata_program.key(),
+    )]
+    /// CHECK: this account is checked by the metadata smart contract
+    pub collection_metadata: UncheckedAccount<'info>,
+
+    #[account(
+        mut,
+        seeds = [
+            b"metadata", 
+            token_metadata_program.key().as_ref(), 
+            collection_mint.key().as_ref(),
+            b"edition"
+        ],
+        bump,
+        seeds::program = token_metadata_program.key(),
+    )]
+    /// CHECK: this account is checked by the metadata smart contract
+    pub collection_master_edition: UncheckedAccount<'info>,
+
+    #[account(
         init,
         payer = payer,
         associated_token::mint = ticket_mint,
@@ -317,4 +449,29 @@ pub struct TokenLottery {
     pub ticket_price: u64,
     pub authority: Pubkey,
     pub randomness_account: Pubkey,
+}
+
+
+#[error_code]
+pub enum ErrorCode {
+    #[msg("Incorrect randomness account")]
+    IncorrectRandomnessAccount,
+    #[msg("Lottery not completed")]
+    LotteryNotCompleted,
+    #[msg("Lottery is not open")]
+    LotteryNotOpen,
+    #[msg("Not authorized")]
+    NotAuthorized,
+    #[msg("Randomness already revealed")]
+    RandomnessAlreadyRevealed,
+    #[msg("Randomness not resolved")]
+    RandomnessNotResolved,
+    #[msg("Winner not chosen")]
+    WinnerNotChosen,
+    #[msg("Winner already chosen")]
+    WinnerChosen,
+    #[msg("Ticket is not verified")]
+    NotVerifiedTicket,
+    #[msg("Incorrect ticket")]
+    IncorrectTicket,
 }
