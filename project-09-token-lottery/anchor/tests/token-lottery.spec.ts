@@ -92,7 +92,7 @@ describe("token lottery", () => {
     console.log(createLotteryTx);
   });
 
-  it("should initialize the lottery system", async () => {
+  it("should test token lottery system", async () => {
     const createTicketCollectionIx = await program.methods
       .createTicketCollection()
       .accounts({
@@ -112,6 +112,9 @@ describe("token lottery", () => {
       wallet.payer,
     ]);
     console.log(sig);
+
+    const slot = await connection.getSlot();
+    const endSlot = slot + 20;
 
     await buyTicket();
     await buyTicket();
@@ -166,7 +169,7 @@ describe("token lottery", () => {
       createRandomnessSignature,
     );
 
-    // TO-DO this line will generate error 
+    // TO-DO this line will generate error
     const sbCommitIx = await randomness.commitIx(queue);
 
     const commitIx = await program.methods
@@ -206,5 +209,41 @@ describe("token lottery", () => {
     );
 
     console.log("Commit randomness signature: ", commitSignature);
+
+    // reveal winner
+    const sbRevealIx = await randomness.revealIx();
+    const revealWinnerIx = await program.methods
+      .revealWinner()
+      .accounts({
+        randomnessAccount: randomness.pubkey,
+      })
+      .instruction();
+
+    const revealBlockHashWithContext = await connection.getLatestBlockhash();
+
+    const revealTx = new anchor.web3.Transaction({
+      feePayer: wallet.payer.publicKey,
+      blockhash: revealBlockHashWithContext.blockhash,
+      lastValidBlockHeight: revealBlockHashWithContext.lastValidBlockHeight,
+    })
+      .add(sbRevealIx)
+      .add(revealWinnerIx);
+
+    let currentSlot = 0;
+    while (currentSlot < endSlot) {
+      const slot = await connection.getSlot();
+      if (slot > currentSlot) {
+        currentSlot = slot;
+        console.log("current slot", currentSlot);
+      }
+    }
+
+    const revealSignature = await anchor.web3.sendAndConfirmTransaction(
+      connection,
+      revealTx,
+      [wallet.payer],
+    );
+
+    console.log("Reveal Signature ", revealSignature);
   });
 });
