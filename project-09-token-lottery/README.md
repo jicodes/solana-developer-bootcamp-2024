@@ -11,12 +11,24 @@
 
 # solution
 ```bash
-solana program dump -um metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s mpl_token_metadata.so
+solana program dump -um metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s metadata.so
 ```
 
 Then use this command to load the program to the local
 validator before running the tests
 
 ```bash
-solana-test-validator --reset --bpf-program metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s mpl_token_metadata.so
+solana-test-validator --reset --bpf-program metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s metadata.so
+```
+
+
+How to use setup-local and start-validator shell script
+```bash
+cd setup
+
+chmod +x setup-local.sh
+chmod +x start-validator.sh
+
+./setup-local.sh
+./start-validator.sh
 ```
