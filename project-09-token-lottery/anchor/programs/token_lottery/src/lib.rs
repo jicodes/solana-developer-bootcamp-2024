@@ -131,7 +131,7 @@ pub mod token_lottery {
                     rent: ctx.accounts.rent.to_account_info(),
                 }
             ).with_signer(signer_seeds),
-            Some(0), // Sets max supply to 0 (fixed supply)
+            Some(0), // Sets supply to 0 (no additional copies can be minted)
         )?;
 
         msg!("Verifying the collection");
@@ -211,7 +211,7 @@ pub mod token_lottery {
             },
             true, // is_mutable
             true, // update_authority_is_signer
-            None 
+            None, // collection details
         )?;
 
         create_master_edition_v3(
@@ -229,10 +229,10 @@ pub mod token_lottery {
                     rent: ctx.accounts.rent.to_account_info(),
                 }
             ).with_signer(signer_seeds),
-            Some(0), // Sets max supply to 0 (fixed supply)
+            Some(0), // Sets supply to 0 (no additional copies can be minted)
         )?;
 
-        // Verify the ticket NFT
+        // Verifies the ticket NFT as part of the collection.
         set_and_verify_sized_collection_item(
             CpiContext::new(
                 ctx.accounts.token_metadata_program.to_account_info(),
