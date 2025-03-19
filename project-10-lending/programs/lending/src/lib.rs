@@ -1,9 +1,9 @@
 use anchor_lang::prelude::*;
 
+mod constants;
 mod error;
 mod instructions;
 mod state;
-mod constants;
 
 use instructions::*;
 
@@ -37,5 +37,7 @@ pub mod lending {
         process_borrow(ctx, amount)
     }
 
-    
+    pub fn repay(ctx: Context<Repay>, amount: u64) -> Result<()> {
+        process_repay(ctx, amount)
+    }
 }
