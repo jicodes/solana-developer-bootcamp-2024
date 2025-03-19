@@ -27,6 +27,8 @@ pub struct User {
     pub health_factor: u64,
     /// Last updated timestamp
     pub last_updated: i64,
+    /// Last updated borrow timestamp
+    pub last_updated_borrow: i64,
 }
 
 #[account]
@@ -34,7 +36,7 @@ pub struct User {
 pub struct Bank {
     /// Authority to make changes to Bank State
     pub authority: Pubkey,
-    /// Mint address of the asset 
+    /// Mint address of the asset
     pub mint_address: Pubkey,
     /// Current number of tokens in the bank
     pub total_deposits: u64,
@@ -44,7 +46,7 @@ pub struct Bank {
     pub total_borrowed: u64,
     /// Current number of borrowed shares in the bank
     pub total_borrowed_shares: u64,
-    /// LTV at which the loan is defined as under collateralized and can be liquidated 
+    /// LTV at which the loan is defined as under collateralized and can be liquidated
     pub liquidation_threshold: u64,
     /// Bonus percentage of collateral that can be liquidated
     pub liquidation_bonus: u64,
