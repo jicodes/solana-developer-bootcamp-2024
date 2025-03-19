@@ -3,6 +3,7 @@ use anchor_lang::prelude::*;
 mod error;
 mod instructions;
 mod state;
+mod constants;
 
 use instructions::*;
 
@@ -31,7 +32,10 @@ pub mod lending {
     pub fn withdraw(ctx: Context<Withdraw>, amount: u64) -> Result<()> {
         process_withdraw(ctx, amount)
     }
-}
 
-#[derive(Accounts)]
-pub struct Initialize {}
+    pub fn borrow(ctx: Context<Borrow>, amount: u64) -> Result<()> {
+        process_borrow(ctx, amount)
+    }
+
+    
+}
