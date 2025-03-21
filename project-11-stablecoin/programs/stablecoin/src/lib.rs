@@ -9,7 +9,8 @@ use instructions::*;
 mod constants;
 use constants::*;
 
-
+mod error;
+use error::*;
 
 declare_id!("9JGTogJJRCqLqKoKP9rSN1yMj1XyQq4VwYVzCvNjWVYQ");
 
@@ -25,5 +26,11 @@ pub mod stablecoin {
         process_update_config(ctx, min_health_factor)
     }
 
-
+    pub fn deposit_collateral_and_mint(
+        ctx: Context<DepositCollateralAndMintTokens>,
+        amount_collateral: u64,
+        amount_to_mint: u64,
+    ) -> Result<()> {
+        process_deposit_collateral_and_mint_tokens(ctx, amount_collateral, amount_to_mint)
+    }
 }
