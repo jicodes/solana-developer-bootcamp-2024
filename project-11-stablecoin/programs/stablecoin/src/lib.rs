@@ -10,7 +10,6 @@ mod constants;
 use constants::*;
 
 mod error;
-use error::*;
 
 declare_id!("9JGTogJJRCqLqKoKP9rSN1yMj1XyQq4VwYVzCvNjWVYQ");
 

@@ -13,18 +13,18 @@ pub struct RedeemCollateralAndBurnTokens<'info> {
 
     pub price_update: Account<'info, PriceUpdateV2>,
     #[account(
-      seeds = [SEED_CONFIG_ACCOUNT],
-      bump = config_account.bump,
-      has_one = mint_account
-  )]
+        seeds = [SEED_CONFIG_ACCOUNT],
+        bump = config_account.bump,
+        has_one = mint_account
+    )]
     pub config_account: Account<'info, Config>,
     #[account(
-      mut,
-      seeds = [SEED_COLLATERAL_ACCOUNT, depositor.key().as_ref()],
-      bump = collateral_account.bump,
-      has_one = sol_account,
-      has_one = token_account
-  )]
+        mut,
+        seeds = [SEED_COLLATERAL_ACCOUNT, depositor.key().as_ref()],
+        bump = collateral_account.bump,
+        has_one = sol_account,
+        has_one = token_account
+    )]
     pub collateral_account: Account<'info, Collateral>,
     #[account(mut)]
     pub sol_account: SystemAccount<'info>,
