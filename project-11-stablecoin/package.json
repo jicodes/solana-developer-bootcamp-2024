@@ -8,7 +8,7 @@
     "@coral-xyz/anchor": "^0.30.1",
     "@pythnetwork/pyth-solana-receiver": "^0.10.0",
     "@solana/web3.js": "^1.98.0",
-    "rpc-websockets": "^10.0.0"
+    "rpc-websockets": "^7.11.0"
   },
   "devDependencies": {
     "@types/bn.js": "^5.1.0",
