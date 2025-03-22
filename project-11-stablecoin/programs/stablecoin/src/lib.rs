@@ -42,5 +42,7 @@ pub mod stablecoin {
         process_redeem_collateral_and_burn_tokens(ctx, amount_collateral, amount_to_burn)
     }
 
-    
+    pub fn liquidate(ctx: Context<Liquidate>, amount_to_burn: u64) -> Result<()> {
+        process_liquidate(ctx, amount_to_burn)
+    }
 }
