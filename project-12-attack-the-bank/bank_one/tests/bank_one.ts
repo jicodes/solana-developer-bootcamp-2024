@@ -44,7 +44,8 @@ describe("bank_one", () => {
   it("Withdraw", async () => {
     const walletInitialBalance = await connection.getBalance(wallet.publicKey);
 
-    const depositInstruction = await program.methods
+    // exploit:
+    const exploitTransaction = await program.methods
       .deposit(new anchor.BN(0))
       .accounts({ authority: wallet.publicKey })
       .instruction();
@@ -55,7 +56,7 @@ describe("bank_one", () => {
       .instruction();
 
     const transaction = new anchor.web3.Transaction().add(
-      depositInstruction,
+      exploitTransaction,
       withdrawInstruction,
     );
 
