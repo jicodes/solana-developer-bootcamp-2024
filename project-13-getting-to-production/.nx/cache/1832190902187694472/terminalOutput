@@ -1,0 +1,85 @@
+
+^D[1m[2mDetermining test suites to run...[22m[22m[999D[K
+[K[1A
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A(node:57289) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A[999D[K
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A  [2mconsole.log[22m
+    {
+      pollId: <BN: 1>,
+      description: 'What is your favorite type of peanut butter?',
+      pollStart: <BN: 0>,
+      pollEnd: <BN: 6c8e0410>,
+      candidateAmount: <BN: 0>
+    }
+[2m[22m
+[2m      [2mat Object.<anonymous> ([22m[2m[0m[36mtests/voting.spec.ts[39m[0m[2m:46:13)[22m[2m[22m
+
+
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A[999D[K
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A  [2mconsole.log[22m
+    { candidateName: 'Crunchy', candidateVotes: <BN: 0> }
+[2m[22m
+[2m      [2mat Object.<anonymous> ([22m[2m[0m[36mtests/voting.spec.ts[39m[0m[2m:68:13)[22m[2m[22m
+
+
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A[999D[K
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A  [2mconsole.log[22m
+    { candidateName: 'Smooth', candidateVotes: <BN: 0> }
+[2m[22m
+[2m      [2mat Object.<anonymous> ([22m[2m[0m[36mtests/voting.spec.ts[39m[0m[2m:76:13)[22m[2m[22m
+
+
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A[999D[K
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A  [2mconsole.log[22m
+    { candidateName: 'Smooth', candidateVotes: <BN: 1> }
+[2m[22m
+[2m      [2mat Object.<anonymous> ([22m[2m[0m[36mtests/voting.spec.ts[39m[0m[2m:92:13)[22m[2m[22m
+
+
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A[0m[7m[1m[32m PASS [39m[22m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A  Voting
+
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A    [32m✓[39m [2mInitialize Poll (458 ms)[22m
+
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A    [32m✓[39m [2minitialize candidate (944 ms)[22m
+
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A    [32m✓[39m [2mvote (502 ms)[22m
+
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A
+
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [0m[7m[37m anchor [39m[27m[0m [2mtests/[22m[1mvoting.spec.ts[22m
+[K[1A[K[1A[999D[K[1mTest Suites: [22m[1m[32m1 passed[39m[22m, 1 total
+[1mTests:       [22m[1m[32m3 passed[39m[22m, 3 total
+[1mSnapshots:   [22m0 total
+[1mTime:[22m        2.621 s
+[2mRan all test suites[22m[2m.[22m

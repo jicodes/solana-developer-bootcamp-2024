@@ -1,0 +1,895 @@
+{
+  "version": "6.0",
+  "nxVersion": "19.0.0",
+  "deps": {
+    "@coral-xyz/anchor": "^0.30.0",
+    "@solana-developers/preset-next": "3.0.1",
+    "@solana/actions": "^1.2.0",
+    "@solana/spl-token": "0.4.6",
+    "@solana/wallet-adapter-base": "^0.9.23",
+    "@solana/wallet-adapter-react": "^0.15.35",
+    "@solana/wallet-adapter-react-ui": "^0.9.35",
+    "@solana/web3.js": "1.91.9",
+    "@tabler/icons-react": "3.5.0",
+    "@tailwindcss/typography": "0.5.13",
+    "@tanstack/react-query": "5.40.0",
+    "@tanstack/react-query-next-experimental": "5.40.0",
+    "bs58": "5.0.0",
+    "buffer": "6.0.3",
+    "daisyui": "4.11.1",
+    "encoding": "0.1.13",
+    "jotai": "2.8.3",
+    "next": "14.0.4",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-hot-toast": "2.4.1",
+    "tslib": "^2.3.0",
+    "@nx/eslint": "19.0.0",
+    "@nx/eslint-plugin": "19.0.0",
+    "@nx/jest": "19.0.0",
+    "@nx/js": "19.0.0",
+    "@nx/next": "19.0.0",
+    "@nx/rollup": "19.0.0",
+    "@nx/workspace": "19.0.0",
+    "@swc-node/register": "~1.8.0",
+    "@swc/cli": "~0.3.12",
+    "@swc/core": "~1.3.85",
+    "@swc/helpers": "~0.5.2",
+    "@swc/jest": "0.2.20",
+    "@types/jest": "^29.4.0",
+    "@types/node": "18.16.9",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.3.0",
+    "@typescript-eslint/parser": "^7.3.0",
+    "autoprefixer": "10.4.13",
+    "eslint": "~8.57.0",
+    "eslint-config-next": "14.0.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "jest": "^29.4.1",
+    "jest-environment-jsdom": "^29.4.1",
+    "nx": "19.0.0",
+    "postcss": "8.4.21",
+    "prettier": "^2.6.2",
+    "tailwindcss": "3.2.7",
+    "ts-jest": "^29.1.0",
+    "ts-node": "10.9.1",
+    "typescript": "~5.4.2"
+  },
+  "pathMappings": {
+    "@/*": [
+      "./web/*"
+    ],
+    "@voting-dapp/anchor": [
+      "anchor/src/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": "nx.json",
+        "hash": "10934541929279078210"
+      },
+      {
+        "file": "package.json",
+        "hash": "17006448565447636167"
+      },
+      {
+        "file": "LICENSE",
+        "hash": "11790418032855049847"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "3494843969422251966"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "10041904644432320818"
+      },
+      {
+        "file": "vercel.json",
+        "hash": "1598408354266276258"
+      },
+      {
+        "file": "yarn.lock",
+        "hash": "6255846695762911614"
+      },
+      {
+        "file": "README.md",
+        "hash": "7645909984354381081"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "3908729608117559712"
+      }
+    ],
+    "projectFileMap": {
+      "anchor": [
+        {
+          "file": "anchor/.anchor/program-logs/96BfzA3fBjaR4hotGMZDEX1LhDnPc7UgicGjhGxJbkb5.voting.log",
+          "hash": "2171322764603690779"
+        },
+        {
+          "file": "anchor/.eslintrc.json",
+          "hash": "10876657505767112116"
+        },
+        {
+          "file": "anchor/.swcrc",
+          "hash": "3236768094882387443"
+        },
+        {
+          "file": "anchor/Anchor.toml",
+          "hash": "3053423084249265826"
+        },
+        {
+          "file": "anchor/Cargo.lock",
+          "hash": "5054306681809960884"
+        },
+        {
+          "file": "anchor/Cargo.toml",
+          "hash": "11054002916905897606"
+        },
+        {
+          "file": "anchor/README.md",
+          "hash": "7511245087790753582"
+        },
+        {
+          "file": "anchor/jest.config.ts",
+          "hash": "10789820129713498849",
+          "deps": [
+            "npm:fs"
+          ]
+        },
+        {
+          "file": "anchor/migrations/deploy.ts",
+          "hash": "165601981430021943",
+          "deps": [
+            "npm:@coral-xyz/anchor"
+          ]
+        },
+        {
+          "file": "anchor/package.json",
+          "hash": "17377052609186044950"
+        },
+        {
+          "file": "anchor/programs/voting/Cargo.toml",
+          "hash": "8425703664995551719"
+        },
+        {
+          "file": "anchor/programs/voting/Xargo.toml",
+          "hash": "12304191003573283670"
+        },
+        {
+          "file": "anchor/programs/voting/src/lib.rs",
+          "hash": "10177822295589543271"
+        },
+        {
+          "file": "anchor/project.json",
+          "hash": "141831645580095741"
+        },
+        {
+          "file": "anchor/src/index.ts",
+          "hash": "4878046716185194416"
+        },
+        {
+          "file": "anchor/src/voting-exports.ts",
+          "hash": "11581061550440674772",
+          "deps": [
+            "npm:@coral-xyz/anchor",
+            "npm:@solana/web3.js"
+          ]
+        },
+        {
+          "file": "anchor/tests/fixtures/voting.so",
+          "hash": "14466989766084809456"
+        },
+        {
+          "file": "anchor/tests/voting.spec.ts",
+          "hash": "13496617157086589865",
+          "deps": [
+            "npm:@coral-xyz/anchor",
+            "npm:@solana/web3.js",
+            "npm:solana-bankrun",
+            "npm:anchor-bankrun"
+          ]
+        },
+        {
+          "file": "anchor/tsconfig.json",
+          "hash": "10304993020986584308"
+        },
+        {
+          "file": "anchor/tsconfig.lib.json",
+          "hash": "12857729230989963964"
+        },
+        {
+          "file": "anchor/tsconfig.spec.json",
+          "hash": "17313551537729802733"
+        }
+      ],
+      "web": [
+        {
+          "file": "web/.eslintrc.json",
+          "hash": "14075324894068274553"
+        },
+        {
+          "file": "web/app/api/hello/route.ts",
+          "hash": "495073956729887886"
+        },
+        {
+          "file": "web/app/api/vote/route.ts",
+          "hash": "17811900410446643983",
+          "deps": [
+            "npm:@solana/actions",
+            "npm:@solana/web3.js",
+            "anchor",
+            "npm:@coral-xyz/anchor"
+          ]
+        },
+        {
+          "file": "web/app/global.css",
+          "hash": "7108397253489769203"
+        },
+        {
+          "file": "web/app/layout.tsx",
+          "hash": "16609431472398315265"
+        },
+        {
+          "file": "web/app/page.module.css",
+          "hash": "4786619528779355986"
+        },
+        {
+          "file": "web/app/page.tsx",
+          "hash": "5290591853364302037"
+        },
+        {
+          "file": "web/app/react-query-provider.tsx",
+          "hash": "3045630838846882828",
+          "deps": [
+            "npm:react",
+            "npm:@tanstack/react-query-next-experimental",
+            "npm:@tanstack/react-query"
+          ]
+        },
+        {
+          "file": "web/components/account/account-data-access.tsx",
+          "hash": "12486200012402042725",
+          "deps": [
+            "npm:@solana/wallet-adapter-react",
+            "npm:@solana/spl-token",
+            "npm:@solana/web3.js",
+            "npm:@tanstack/react-query",
+            "npm:react-hot-toast"
+          ]
+        },
+        {
+          "file": "web/components/account/account-detail-feature.tsx",
+          "hash": "5078510326215063839",
+          "deps": [
+            "npm:@solana/web3.js",
+            "npm:react",
+            "npm:next/navigation"
+          ]
+        },
+        {
+          "file": "web/components/account/account-list-feature.tsx",
+          "hash": "729224853085720231",
+          "deps": [
+            "npm:@solana/wallet-adapter-react",
+            "npm:next/navigation"
+          ]
+        },
+        {
+          "file": "web/components/account/account-ui.tsx",
+          "hash": "15669230551060885779",
+          "deps": [
+            "npm:@solana/wallet-adapter-react",
+            "npm:@solana/web3.js",
+            "npm:@tabler/icons-react",
+            "npm:@tanstack/react-query",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "web/components/cluster/cluster-data-access.tsx",
+          "hash": "14689816500549093808",
+          "deps": [
+            "npm:@solana/web3.js",
+            "npm:jotai",
+            "npm:jotai/utils",
+            "npm:react",
+            "npm:react-hot-toast"
+          ]
+        },
+        {
+          "file": "web/components/cluster/cluster-feature.tsx",
+          "hash": "3533560093864689157",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "web/components/cluster/cluster-ui.tsx",
+          "hash": "16307074544026673789",
+          "deps": [
+            "npm:@solana/wallet-adapter-react",
+            "npm:@tabler/icons-react",
+            "npm:@tanstack/react-query",
+            "npm:react",
+            "npm:@solana/web3.js"
+          ]
+        },
+        {
+          "file": "web/components/counter/counter-data-access.tsx",
+          "hash": "709396713514097649",
+          "deps": [
+            "anchor",
+            "npm:@coral-xyz/anchor",
+            "npm:@solana/wallet-adapter-react",
+            "npm:@solana/web3.js",
+            "npm:@tanstack/react-query",
+            "npm:react",
+            "npm:react-hot-toast"
+          ]
+        },
+        {
+          "file": "web/components/counter/counter-feature.tsx",
+          "hash": "3000985330401513847",
+          "deps": [
+            "npm:@solana/wallet-adapter-react"
+          ]
+        },
+        {
+          "file": "web/components/counter/counter-ui.tsx",
+          "hash": "1074293929783267875",
+          "deps": [
+            "npm:@solana/web3.js",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "web/components/dashboard/dashboard-feature.tsx",
+          "hash": "14964384807952471238"
+        },
+        {
+          "file": "web/components/solana/solana-provider.tsx",
+          "hash": "6458795527245399267",
+          "deps": [
+            "npm:next/dynamic",
+            "npm:@coral-xyz/anchor",
+            "npm:@solana/wallet-adapter-base",
+            "npm:@solana/wallet-adapter-react",
+            "npm:@solana/wallet-adapter-react-ui",
+            "npm:react",
+            "npm:@solana/wallet-adapter-react-ui/styles.css",
+            [
+              "npm:@solana/wallet-adapter-react-ui",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "web/components/ui/ui-layout.tsx",
+          "hash": "10871754600828784745",
+          "deps": [
+            "npm:react",
+            "npm:next/link",
+            "npm:next/navigation",
+            "npm:react-hot-toast"
+          ]
+        },
+        {
+          "file": "web/components/voting/voting-data-access.tsx",
+          "hash": "10735448607231175171",
+          "deps": [
+            "anchor",
+            "npm:@coral-xyz/anchor",
+            "npm:@solana/wallet-adapter-react",
+            "npm:@solana/web3.js",
+            "npm:@tanstack/react-query",
+            "npm:react",
+            "npm:react-hot-toast"
+          ]
+        },
+        {
+          "file": "web/components/voting/voting-feature.tsx",
+          "hash": "3269477281088594132",
+          "deps": [
+            "npm:@solana/wallet-adapter-react"
+          ]
+        },
+        {
+          "file": "web/components/voting/voting-ui.tsx",
+          "hash": "2662575166552140806",
+          "deps": [
+            "npm:react",
+            "npm:@solana/web3.js"
+          ]
+        },
+        {
+          "file": "web/index.d.ts",
+          "hash": "5498222895072842432"
+        },
+        {
+          "file": "web/next-env.d.ts",
+          "hash": "5909181270615354023"
+        },
+        {
+          "file": "web/next.config.js",
+          "hash": "11075275437133129850",
+          "deps": [
+            "npm:@nx/next"
+          ]
+        },
+        {
+          "file": "web/postcss.config.js",
+          "hash": "2759402739052110475",
+          "deps": [
+            "npm:path"
+          ]
+        },
+        {
+          "file": "web/project.json",
+          "hash": "2951579398516498055"
+        },
+        {
+          "file": "web/public/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "web/public/favicon.ico",
+          "hash": "13871463210711627531"
+        },
+        {
+          "file": "web/public/logo.png",
+          "hash": "577251929812501589"
+        },
+        {
+          "file": "web/tailwind.config.js",
+          "hash": "15953156811378497776",
+          "deps": [
+            "npm:@nx/react/tailwind",
+            "npm:path",
+            "npm:daisyui"
+          ]
+        },
+        {
+          "file": "web/tsconfig.json",
+          "hash": "10836663897421372905"
+        },
+        {
+          "file": "web/.next/package.json",
+          "hash": "11338307439248427064"
+        },
+        {
+          "file": "web/.next/server/server-reference-manifest.json",
+          "hash": "6598244176553872911"
+        },
+        {
+          "file": "web/.next/build-manifest.json",
+          "hash": "4022198718087905130"
+        },
+        {
+          "file": "web/.next/app-build-manifest.json",
+          "hash": "10587770091749095375"
+        },
+        {
+          "file": "web/.next/server/middleware-manifest.json",
+          "hash": "11919384916463558595"
+        },
+        {
+          "file": "web/.next/types/package.json",
+          "hash": "6094546126370684104"
+        },
+        {
+          "file": "web/.next/server/app-paths-manifest.json",
+          "hash": "6045270427439857966"
+        },
+        {
+          "file": "web/.next/server/next-font-manifest.json",
+          "hash": "11891788324563068681"
+        },
+        {
+          "file": "web/.next/server/server-reference-manifest.js",
+          "hash": "17289638162103051629"
+        },
+        {
+          "file": "web/.next/trace",
+          "hash": "2017157849570068977"
+        },
+        {
+          "file": "web/.next/react-loadable-manifest.json",
+          "hash": "1389868326933519382"
+        },
+        {
+          "file": "web/.next/server/next-font-manifest.js",
+          "hash": "16541577805185552134"
+        },
+        {
+          "file": "web/.next/static/development/_ssgManifest.js",
+          "hash": "17018243955171961484"
+        },
+        {
+          "file": "web/.next/server/middleware-build-manifest.js",
+          "hash": "12578018668904100291"
+        },
+        {
+          "file": "web/.next/static/chunks/polyfills.js",
+          "hash": "3837536670243305325"
+        },
+        {
+          "file": "web/.next/server/pages-manifest.json",
+          "hash": "1389868326933519382"
+        },
+        {
+          "file": "web/.next/server/middleware-react-loadable-manifest.js",
+          "hash": "9185069726031651908"
+        },
+        {
+          "file": "web/.next/static/development/_buildManifest.js",
+          "hash": "15678672880040024319"
+        },
+        {
+          "file": "web/.next/cache/webpack/client-development/0.pack.gz",
+          "hash": "4116636468120192437"
+        },
+        {
+          "file": "web/.next/cache/webpack/client-development/index.pack.gz",
+          "hash": "9282843788552879747"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/safe-buffer.js",
+          "hash": "5404661546032205797"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/@solana.js",
+          "hash": "16012883731297193436"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/bn.js.js",
+          "hash": "16555226569957864954"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/camelcase.js",
+          "hash": "1451420938214194349"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/snake-case.js",
+          "hash": "17290179409562049319"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/node-fetch.js",
+          "hash": "6161372936992124013"
+        },
+        {
+          "file": "web/.next/types/app/page.ts",
+          "hash": "5125541734319623213",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "web/.next/server/app/page.js",
+          "hash": "15779722030011180649",
+          "deps": [
+            [
+              "npm:next",
+              "dynamic"
+            ],
+            [
+              "npm:node-gyp-build",
+              "dynamic"
+            ],
+            [
+              "npm:assert",
+              "dynamic"
+            ],
+            [
+              "npm:buffer",
+              "dynamic"
+            ],
+            [
+              "npm:crypto",
+              "dynamic"
+            ],
+            [
+              "npm:events",
+              "dynamic"
+            ],
+            [
+              "npm:fs",
+              "dynamic"
+            ],
+            [
+              "npm:http",
+              "dynamic"
+            ],
+            [
+              "npm:https",
+              "dynamic"
+            ],
+            [
+              "npm:net",
+              "dynamic"
+            ],
+            [
+              "npm:node:crypto",
+              "dynamic"
+            ],
+            [
+              "npm:node:url",
+              "dynamic"
+            ],
+            [
+              "npm:path",
+              "dynamic"
+            ],
+            [
+              "npm:process",
+              "dynamic"
+            ],
+            [
+              "npm:punycode",
+              "dynamic"
+            ],
+            [
+              "npm:stream",
+              "dynamic"
+            ],
+            [
+              "npm:tls",
+              "dynamic"
+            ],
+            [
+              "npm:url",
+              "dynamic"
+            ],
+            [
+              "npm:util",
+              "dynamic"
+            ],
+            [
+              "npm:zlib",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/@coral-xyz.js",
+          "hash": "12228749415109501358"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/bufferutil.js",
+          "hash": "15344287588019346350"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/cross-fetch.js",
+          "hash": "5885982357937066599"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/dijkstrajs.js",
+          "hash": "12712008104639890591"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/borsh.js",
+          "hash": "10665321655955176555"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/utf-8-validate.js",
+          "hash": "429038023159816884"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/superstruct.js",
+          "hash": "18343493879583412831"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/ws.js",
+          "hash": "5138015791357091782"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/bigint-buffer.js",
+          "hash": "4238320397051013141"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/@solana-mobile.js",
+          "hash": "12450539272212965181"
+        },
+        {
+          "file": "web/.next/types/app/layout.ts",
+          "hash": "9931878089308547631",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/tslib.js",
+          "hash": "6532547825031973024"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/@wallet-standard.js",
+          "hash": "13164986997331803590"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/rpc-websockets.js",
+          "hash": "14449322515824670029"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/@tabler.js",
+          "hash": "8783868869426466067"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/text-encoding-utf-8.js",
+          "hash": "2175196220615230403"
+        },
+        {
+          "file": "web/.next/server/webpack-runtime.js",
+          "hash": "15456923998134259561"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/jayson.js",
+          "hash": "2134770840432287496"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/react-hot-toast.js",
+          "hash": "3557433465945598907"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/goober.js",
+          "hash": "6376218677166039421"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/qrcode.js",
+          "hash": "6150516407555535257"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/js-base64.js",
+          "hash": "3206929090426456327"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/jotai.js",
+          "hash": "15792946159795389792"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/lower-case.js",
+          "hash": "96749269433550962"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/bindings.js",
+          "hash": "7252339492231267532"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/file-uri-to-path.js",
+          "hash": "6072912028028785260"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/buffer-layout.js",
+          "hash": "4677739361464786933"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/dot-case.js",
+          "hash": "2489723370007727189"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/no-case.js",
+          "hash": "7569980371481485496"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/bs58.js",
+          "hash": "10903215442787105255"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/@noble.js",
+          "hash": "15811457071823844803"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/pako.js",
+          "hash": "12654454286390397943"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/@tanstack.js",
+          "hash": "3122019792398192242"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/toml.js",
+          "hash": "7714334633387701575"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/base-x.js",
+          "hash": "12144390311083849988"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/eventemitter3.js",
+          "hash": "10947082195114587713"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/pngjs.js",
+          "hash": "7380446181711460369"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/uuid.js",
+          "hash": "7967818976119329848"
+        },
+        {
+          "file": "web/.next/server/vendor-chunks/next.js",
+          "hash": "16374064020712316529"
+        },
+        {
+          "file": "web/.next/static/chunks/app-pages-internals.js",
+          "hash": "17348408485675820047"
+        },
+        {
+          "file": "web/.next/static/chunks/app/layout.js",
+          "hash": "133650625619871609"
+        },
+        {
+          "file": "web/.next/static/css/app/layout.css",
+          "hash": "5965246272387610160"
+        },
+        {
+          "file": "web/.next/static/chunks/webpack.js",
+          "hash": "3944669740451190812"
+        },
+        {
+          "file": "web/.next/static/chunks/app/page.js",
+          "hash": "8482542274968215792"
+        },
+        {
+          "file": "web/.next/static/chunks/_app-pages-browser_node_modules_solana_wallet-adapter-react-ui_lib_esm_index_js.js",
+          "hash": "9742179838589724638"
+        },
+        {
+          "file": "web/.next/static/chunks/main-app.js",
+          "hash": "2338873951036590080"
+        },
+        {
+          "file": "web/.next/static/css/app/page.css",
+          "hash": "2969389196049149633"
+        },
+        {
+          "file": "web/.next/server/app/page_client-reference-manifest.js",
+          "hash": "6961157306577084739"
+        },
+        {
+          "file": "web/.next/static/webpack/633457081244afec._.hot-update.json",
+          "hash": "10481436618516908015"
+        },
+        {
+          "file": "web/.next/static/webpack/app/layout.da2a9098d3aea8e5.hot-update.js",
+          "hash": "4161914380422627205"
+        },
+        {
+          "file": "web/.next/static/webpack/da2a9098d3aea8e5.webpack.hot-update.json",
+          "hash": "8773209185785337189"
+        },
+        {
+          "file": "web/.next/static/webpack/webpack.da2a9098d3aea8e5.hot-update.js",
+          "hash": "719436721122325241"
+        },
+        {
+          "file": "web/.next/cache/webpack/server-development/index.pack.gz",
+          "hash": "6296508676580962659"
+        },
+        {
+          "file": "web/.next/cache/webpack/server-development/0.pack.gz",
+          "hash": "14127586130973751799"
+        },
+        {
+          "file": "web/.next/cache/webpack/client-development/1.pack.gz",
+          "hash": "18069509855695358779"
+        },
+        {
+          "file": "web/.next/cache/webpack/client-development/index.pack.gz.old",
+          "hash": "12824727905885577245"
+        }
+      ]
+    }
+  }
+}

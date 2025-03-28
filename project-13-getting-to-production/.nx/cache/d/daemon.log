@@ -1,0 +1,162 @@
+[NX Daemon Server] - 2025-03-26T13:41:04.371Z - Started listening on: /var/folders/6f/l_c7mrnn37j367wy0s0m06880000gn/T/d29695eb2e7042eef8bf/d.sock
+[NX Daemon Server] - 2025-03-26T13:41:04.377Z - [WATCHER]: Subscribed to changes within: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production (native)
+[NX Daemon Server] - 2025-03-26T13:41:04.378Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-03-26T13:41:04.379Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2025-03-26T13:41:04.379Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-03-26T13:41:04.380Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-03-26T13:41:04.389Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-26T13:41:04.389Z - [REQUEST]: 
+[NX Daemon Server] - 2025-03-26T13:41:04.389Z - [REQUEST]: 
+[NX Daemon Server] - 2025-03-26T13:41:04.816Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2025-03-26T13:41:04.817Z - Time taken for 'total for creating and serializing project graph' 436.48025ms
+[NX Daemon Server] - 2025-03-26T13:41:04.819Z - Done responding to the client project-graph
+[NX Daemon Server] - 2025-03-26T13:41:04.819Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 436. Response time: 3.
+[NX Daemon Server] - 2025-03-26T13:41:04.848Z - [REQUEST]: Responding to the client. handleHashTasks
+[NX Daemon Server] - 2025-03-26T13:41:04.849Z - Done responding to the client handleHashTasks
+[NX Daemon Server] - 2025-03-26T13:41:04.849Z - Handled HASH_TASKS. Handling time: 10. Response time: 1.
+[NX Daemon Server] - 2025-03-26T13:41:04.849Z - Time taken for 'Load Nx Plugin: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.3137500000000273ms
+[NX Daemon Server] - 2025-03-26T13:41:11.008Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX Daemon Server] - 2025-03-26T13:41:11.008Z - Done responding to the client recordOutputsHash
+[NX Daemon Server] - 2025-03-26T13:41:11.008Z - Handled RECORD_OUTPUTS_HASH. Handling time: 27. Response time: 0.
+[NX Daemon Server] - 2025-03-26T13:41:11.037Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-03-26T13:41:11.101Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-03-26T13:41:11.101Z - [WATCHER]: anchor/.anchor/program-logs/96BfzA3fBjaR4hotGMZDEX1LhDnPc7UgicGjhGxJbkb5.voting.log was modified
+[NX Daemon Server] - 2025-03-26T13:41:11.203Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-26T13:41:11.203Z - [REQUEST]: anchor/.anchor/program-logs/96BfzA3fBjaR4hotGMZDEX1LhDnPc7UgicGjhGxJbkb5.voting.log
+[NX Daemon Server] - 2025-03-26T13:41:11.203Z - [REQUEST]: 
+[NX Daemon Server] - 2025-03-26T13:41:11.226Z - Time taken for 'Load Nx Plugin: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.2865830000000642ms
+[NX Daemon Server] - 2025-03-26T13:42:33.999Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-03-26T13:42:34.000Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-03-26T13:42:34.000Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-03-26T13:42:34.001Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-03-26T13:42:34.002Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2025-03-26T13:42:34.002Z - Time taken for 'total for creating and serializing project graph' 0.5175420000014128ms
+[NX Daemon Server] - 2025-03-26T13:42:34.004Z - Done responding to the client project-graph
+[NX Daemon Server] - 2025-03-26T13:42:34.004Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 1. Response time: 2.
+[NX Daemon Server] - 2025-03-26T13:42:34.033Z - [REQUEST]: Responding to the client. handleHashTasks
+[NX Daemon Server] - 2025-03-26T13:42:34.033Z - Time taken for 'Load Nx Plugin: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.41245899999921676ms
+[NX Daemon Server] - 2025-03-26T13:42:34.033Z - Done responding to the client handleHashTasks
+[NX Daemon Server] - 2025-03-26T13:42:34.033Z - Handled HASH_TASKS. Handling time: 12. Response time: 0.
+[NX Daemon Server] - 2025-03-26T13:42:34.654Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2025-03-26T13:42:34.655Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-03-26T13:42:34.655Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2025-03-26T13:42:34.656Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-03-26T13:42:34.657Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2025-03-26T13:42:34.657Z - Time taken for 'total for creating and serializing project graph' 0.5103749999980209ms
+[NX Daemon Server] - 2025-03-26T13:42:34.659Z - Done responding to the client project-graph
+[NX Daemon Server] - 2025-03-26T13:42:34.659Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 1. Response time: 2.
+[NX Daemon Server] - 2025-03-26T13:42:35.201Z - Established a connection. Number of open connections: 3
+[NX Daemon Server] - 2025-03-26T13:42:35.202Z - Closed a connection. Number of open connections: 2
+[NX Daemon Server] - 2025-03-26T13:42:35.202Z - Established a connection. Number of open connections: 3
+[NX Daemon Server] - 2025-03-26T13:42:35.203Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-03-26T13:42:35.204Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2025-03-26T13:42:35.204Z - Time taken for 'total for creating and serializing project graph' 0.4723329999978887ms
+[NX Daemon Server] - 2025-03-26T13:42:35.206Z - Done responding to the client project-graph
+[NX Daemon Server] - 2025-03-26T13:42:35.206Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 1. Response time: 2.
+[NX Daemon Server] - 2025-03-26T13:42:35.247Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-03-26T13:42:35.248Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2025-03-26T13:42:35.248Z - Time taken for 'total for creating and serializing project graph' 0.43366699999023695ms
+[NX Daemon Server] - 2025-03-26T13:42:35.251Z - Done responding to the client project-graph
+[NX Daemon Server] - 2025-03-26T13:42:35.251Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 1. Response time: 3.
+[NX Daemon Server] - 2025-03-26T13:42:37.288Z - [WATCHER]: web/.next/package.json was created or restored
+[NX Daemon Server] - 2025-03-26T13:42:37.288Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-03-26T13:42:37.390Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-26T13:42:37.390Z - [REQUEST]: web/.next/package.json
+[NX Daemon Server] - 2025-03-26T13:42:37.390Z - [REQUEST]: 
+[NX Daemon Server] - 2025-03-26T13:42:37.429Z - Time taken for 'Load Nx Plugin: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.26904100000683684ms
+[NX Daemon Server] - 2025-03-26T13:42:39.268Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-03-26T13:42:39.269Z - [WATCHER]: 17 file(s) created or restored, 0 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2025-03-26T13:42:39.371Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-26T13:42:39.371Z - [REQUEST]: web/.next/server/next-font-manifest.js,web/.next/app-build-manifest.json,web/.next/build-manifest.json,web/.next/server/middleware-build-manifest.js,web/.next/static/chunks/polyfills.js,web/.next/server/pages-manifest.json,web/.next/server/server-reference-manifest.js,web/.next/types/package.json,web/.next/react-loadable-manifest.json,web/.next/static/development/_ssgManifest.js,web/.next/server/middleware-manifest.json,web/.next/server/next-font-manifest.json,web/.next/trace,web/.next/server/middleware-react-loadable-manifest.js,web/.next/server/server-reference-manifest.json,web/.next/static/development/_buildManifest.js,web/.next/server/app-paths-manifest.json
+[NX Daemon Server] - 2025-03-26T13:42:39.371Z - [REQUEST]: 
+[NX Daemon Server] - 2025-03-26T13:42:39.482Z - Time taken for 'Load Nx Plugin: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.4777089999988675ms
+[NX Daemon Server] - 2025-03-26T13:42:39.583Z - [WATCHER]: 14 file(s) created or restored, 0 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2025-03-26T13:42:39.621Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-03-26T13:42:39.697Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-26T13:42:39.697Z - [REQUEST]: web/.next/server/middleware-build-manifest.js,web/.next/static/development/_buildManifest.js,web/.next/server/next-font-manifest.js,web/.next/server/middleware-react-loadable-manifest.js,web/.next/build-manifest.json,web/.next/react-loadable-manifest.json,web/.next/server/server-reference-manifest.json,web/.next/server/app-paths-manifest.json,web/.next/server/server-reference-manifest.js,web/.next/server/pages-manifest.json,web/.next/static/development/_ssgManifest.js,web/.next/types/package.json,web/.next/app-build-manifest.json,web/.next/server/next-font-manifest.json
+[NX Daemon Server] - 2025-03-26T13:42:39.697Z - [REQUEST]: 
+[NX Daemon Server] - 2025-03-26T13:42:40.062Z - Time taken for 'Load Nx Plugin: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.2582079999992857ms
+[NX Daemon Server] - 2025-03-26T13:42:40.437Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-03-26T13:42:40.459Z - [WATCHER]: 4 file(s) created or restored, 0 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2025-03-26T13:42:40.497Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-03-26T13:42:40.527Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-26T13:42:40.527Z - [REQUEST]: web/.next/server/pages-manifest.json,web/.next/server/server-reference-manifest.js,web/.next/server/app-paths-manifest.json,web/.next/server/server-reference-manifest.json
+[NX Daemon Server] - 2025-03-26T13:42:40.527Z - [REQUEST]: 
+[NX Daemon Server] - 2025-03-26T13:42:40.556Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2025-03-26T13:42:40.556Z - Time taken for 'total for creating and serializing project graph' 59.30412500000966ms
+[NX Daemon Server] - 2025-03-26T13:42:40.557Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-03-26T13:42:40.565Z - [WATCHER]: 0 file(s) created or restored, 6 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2025-03-26T13:42:40.618Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-03-26T13:42:40.636Z - [WATCHER]: 0 file(s) created or restored, 4 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2025-03-26T13:42:40.668Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-26T13:42:40.669Z - [REQUEST]: web/.next/server/server-reference-manifest.json,web/.next/server/app-paths-manifest.json,web/.next/server/pages-manifest.json,web/.next/server/middleware-manifest.json,web/.next/server/server-reference-manifest.js,web/.next/types/package.json
+[NX Daemon Server] - 2025-03-26T13:42:40.669Z - [REQUEST]: 
+[NX Daemon Server] - 2025-03-26T13:42:40.697Z - Time taken for 'Load Nx Plugin: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.6824160000105621ms
+[NX Daemon Server] - 2025-03-26T13:42:40.720Z - Done responding to the client project-graph
+[NX Daemon Server] - 2025-03-26T13:42:40.720Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 59. Response time: 164.
+[NX Daemon Server] - 2025-03-26T13:42:41.204Z - [WATCHER]: 2 file(s) created or restored, 0 file(s) modified, 2 file(s) deleted
+[NX Daemon Server] - 2025-03-26T13:42:41.204Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-03-26T13:42:41.315Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-26T13:42:41.317Z - [REQUEST]: web/.next/cache/webpack/client-development/index.pack.gz,web/.next/cache/webpack/client-development/0.pack.gz
+[NX Daemon Server] - 2025-03-26T13:42:41.317Z - [REQUEST]: web/.next/cache/webpack/client-development/index.pack.gz_,web/.next/cache/webpack/client-development/0.pack.gz_
+[NX Daemon Server] - 2025-03-26T13:42:41.367Z - Time taken for 'Load Nx Plugin: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.4922089999890886ms
+[NX Daemon Server] - 2025-03-26T13:42:51.185Z - [WATCHER]: 47 file(s) created or restored, 5 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2025-03-26T13:42:51.186Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-03-26T13:42:51.290Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-26T13:42:51.290Z - [REQUEST]: web/.next/server/vendor-chunks/bigint-buffer.js,web/.next/server/vendor-chunks/lower-case.js,web/.next/server/vendor-chunks/qrcode.js,web/.next/server/vendor-chunks/react-hot-toast.js,web/.next/server/vendor-chunks/@tanstack.js,web/.next/server/vendor-chunks/ws.js,web/.next/server/vendor-chunks/safe-buffer.js,web/.next/server/vendor-chunks/@tabler.js,web/.next/server/vendor-chunks/bs58.js,web/.next/server/vendor-chunks/eventemitter3.js,web/.next/server/vendor-chunks/jotai.js,web/.next/server/vendor-chunks/uuid.js,web/.next/server/vendor-chunks/@coral-xyz.js,web/.next/server/vendor-chunks/node-fetch.js,web/.next/server/vendor-chunks/@noble.js,web/.next/server/vendor-chunks/superstruct.js,web/.next/server/vendor-chunks/cross-fetch.js,web/.next/server/vendor-chunks/dot-case.js,web/.next/server/vendor-chunks/next.js,web/.next/server/vendor-chunks/jayson.js,web/.next/server/vendor-chunks/tslib.js,web/.next/server/vendor-chunks/@solana.js,web/.next/server/vendor-chunks/no-case.js,web/.next/server/vendor-chunks/toml.js,web/.next/server/vendor-chunks/dijkstrajs.js,web/.next/types/app/page.ts,web/.next/server/vendor-chunks/@wallet-standard.js,web/.next/server/vendor-chunks/pako.js,web/.next/server/vendor-chunks/buffer-layout.js,web/.next/server/vendor-chunks/@solana-mobile.js,web/.next/server/vendor-chunks/js-base64.js,web/.next/server/vendor-chunks/bn.js.js,web/.next/server/vendor-chunks/snake-case.js,web/.next/server/vendor-chunks/goober.js,web/.next/types/app/layout.ts,web/.next/server/webpack-runtime.js,web/.next/server/vendor-chunks/text-encoding-utf-8.js,web/.next/server/vendor-chunks/utf-8-validate.js,web/.next/server/vendor-chunks/pngjs.js,web/.next/server/vendor-chunks/base-x.js,web/.next/server/vendor-chunks/rpc-websockets.js,web/.next/server/vendor-chunks/borsh.js,web/.next/server/app/page.js,web/.next/server/vendor-chunks/bindings.js,web/.next/server/vendor-chunks/file-uri-to-path.js,web/.next/server/vendor-chunks/camelcase.js,web/.next/server/vendor-chunks/bufferutil.js,web/.next/server/app-paths-manifest.json,web/.next/server/server-reference-manifest.js,web/.next/server/pages-manifest.json,web/.next/types/package.json,web/.next/server/server-reference-manifest.json
+[NX Daemon Server] - 2025-03-26T13:42:51.290Z - [REQUEST]: 
+[NX Daemon Server] - 2025-03-26T13:42:51.348Z - Time taken for 'Load Nx Plugin: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.2939159999950789ms
+[NX Daemon Server] - 2025-03-26T13:42:53.186Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-03-26T13:42:53.187Z - [WATCHER]: 10 file(s) created or restored, 9 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2025-03-26T13:42:53.292Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-26T13:42:53.292Z - [REQUEST]: web/.next/static/chunks/webpack.js,web/.next/static/chunks/app-pages-internals.js,web/.next/static/chunks/app/page.js,web/.next/static/css/app/page.css,web/.next/static/css/app/layout.css,web/.next/server/app/page_client-reference-manifest.js,web/.next/static/chunks/main-app.js,web/.next/static/webpack/633457081244afec._.hot-update.json,web/.next/static/chunks/app/layout.js,web/.next/static/chunks/_app-pages-browser_node_modules_solana_wallet-adapter-react-ui_lib_esm_index_js.js,web/.next/build-manifest.json,web/.next/static/development/_buildManifest.js,web/.next/server/middleware-build-manifest.js,web/.next/server/next-font-manifest.js,web/.next/server/next-font-manifest.json,web/.next/react-loadable-manifest.json,web/.next/app-build-manifest.json,web/.next/server/middleware-react-loadable-manifest.js,web/.next/static/development/_ssgManifest.js
+[NX Daemon Server] - 2025-03-26T13:42:53.292Z - [REQUEST]: 
+[NX Daemon Server] - 2025-03-26T13:42:53.384Z - Time taken for 'Load Nx Plugin: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.2853340000001481ms
+[NX Daemon Server] - 2025-03-26T13:42:53.777Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-03-26T13:42:53.784Z - [WATCHER]: 6 file(s) created or restored, 9 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2025-03-26T13:42:53.891Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-26T13:42:53.891Z - [REQUEST]: web/.next/static/webpack/app/layout.da2a9098d3aea8e5.hot-update.js,web/.next/static/webpack/webpack.da2a9098d3aea8e5.hot-update.js,web/.next/static/webpack/da2a9098d3aea8e5.webpack.hot-update.json,web/.next/static/chunks/app/layout.js,web/.next/static/chunks/webpack.js,web/.next/server/app/page_client-reference-manifest.js,web/.next/server/next-font-manifest.json,web/.next/static/development/_buildManifest.js,web/.next/build-manifest.json,web/.next/app-build-manifest.json,web/.next/static/development/_ssgManifest.js,web/.next/server/next-font-manifest.js,web/.next/server/middleware-react-loadable-manifest.js,web/.next/react-loadable-manifest.json,web/.next/server/middleware-build-manifest.js
+[NX Daemon Server] - 2025-03-26T13:42:53.891Z - [REQUEST]: 
+[NX Daemon Server] - 2025-03-26T13:42:54.024Z - Time taken for 'Load Nx Plugin: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.818874999997206ms
+[NX Daemon Server] - 2025-03-26T13:42:54.623Z - [WATCHER]: 2 file(s) created or restored, 0 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2025-03-26T13:42:54.623Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-03-26T13:42:54.752Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-26T13:42:54.767Z - [REQUEST]: web/.next/cache/webpack/server-development/0.pack.gz_,web/.next/cache/webpack/server-development/index.pack.gz_
+[NX Daemon Server] - 2025-03-26T13:42:54.767Z - [REQUEST]: 
+[NX Daemon Server] - 2025-03-26T13:42:54.898Z - Time taken for 'Load Nx Plugin: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 11.524375000008149ms
+[NX Daemon Server] - 2025-03-26T13:42:55.191Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-03-26T13:42:55.192Z - [WATCHER]: 2 file(s) created or restored, 0 file(s) modified, 0 file(s) deleted
+[NX Daemon Server] - 2025-03-26T13:42:55.295Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-26T13:42:55.295Z - [REQUEST]: web/.next/cache/webpack/client-development/1.pack.gz_,web/.next/cache/webpack/client-development/index.pack.gz_
+[NX Daemon Server] - 2025-03-26T13:42:55.295Z - [REQUEST]: 
+[NX Daemon Server] - 2025-03-26T13:42:55.374Z - Time taken for 'Load Nx Plugin: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.25033300000359304ms
+[NX Daemon Server] - 2025-03-26T13:42:55.735Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-03-26T13:42:55.736Z - [WATCHER]: 1 file(s) created or restored, 1 file(s) modified, 2 file(s) deleted
+[NX Daemon Server] - 2025-03-26T13:42:55.846Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-26T13:42:55.846Z - [REQUEST]: web/.next/cache/webpack/server-development/index.pack.gz,web/.next/cache/webpack/server-development/0.pack.gz
+[NX Daemon Server] - 2025-03-26T13:42:55.846Z - [REQUEST]: web/.next/cache/webpack/server-development/index.pack.gz_,web/.next/cache/webpack/server-development/0.pack.gz_
+[NX Daemon Server] - 2025-03-26T13:42:55.936Z - Time taken for 'Load Nx Plugin: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.23341699999582488ms
+[NX Daemon Server] - 2025-03-26T13:42:55.947Z - [WATCHER]: 3 file(s) created or restored, 0 file(s) modified, 2 file(s) deleted
+[NX Daemon Server] - 2025-03-26T13:42:55.948Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-03-26T13:42:56.061Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-26T13:42:56.061Z - [REQUEST]: web/.next/cache/webpack/client-development/index.pack.gz,web/.next/cache/webpack/client-development/1.pack.gz,web/.next/cache/webpack/client-development/index.pack.gz.old
+[NX Daemon Server] - 2025-03-26T13:42:56.061Z - [REQUEST]: web/.next/cache/webpack/client-development/1.pack.gz_,web/.next/cache/webpack/client-development/index.pack.gz_
+[NX Daemon Server] - 2025-03-26T13:42:56.148Z - Time taken for 'Load Nx Plugin: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.24237500000162981ms
+[NX Daemon Server] - 2025-03-26T19:49:06.044Z - There are 3 open connections. Reset inactivity timer.
+[NX Daemon Server] - 2025-03-26T23:14:52.846Z - There are 3 open connections. Reset inactivity timer.
+[NX Daemon Server] - 2025-03-27T04:03:26.719Z - There are 3 open connections. Reset inactivity timer.
+[NX Daemon Server] - 2025-03-27T07:48:18.475Z - Closed a connection. Number of open connections: 2
+[NX Daemon Server] - 2025-03-27T07:48:18.478Z - There are 2 open connections. Reset inactivity timer.
+[NX Daemon Server] - 2025-03-27T07:48:18.479Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-03-27T07:48:18.598Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-03-27T07:48:18.612Z - [WATCHER]: web/.next/trace was modified
+[NX Daemon Server] - 2025-03-27T07:48:18.826Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-03-27T07:48:18.826Z - [REQUEST]: web/.next/trace
+[NX Daemon Server] - 2025-03-27T07:48:18.827Z - [REQUEST]: 
+[NX Daemon Server] - 2025-03-27T07:48:18.967Z - Time taken for 'Load Nx Plugin: /Users/d/web3/solana/solana-developer-bootcamp-2024/project-13-getting-to-production/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 4.568083003163338ms
+[NX Daemon Server] - 2025-03-27T12:03:17.333Z - There are 1 open connections. Reset inactivity timer.
+[NX Daemon Server] - 2025-03-27T15:03:17.398Z - There are 1 open connections. Reset inactivity timer.
+[NX Daemon Server] - 2025-03-27T21:14:16.487Z - There are 1 open connections. Reset inactivity timer.
+[NX Daemon Server] - 2025-03-28T02:46:23.154Z - There are 1 open connections. Reset inactivity timer.
+[NX Daemon Server] - 2025-03-28T06:30:36.941Z - There are 1 open connections. Reset inactivity timer.
+[NX Daemon Server] - 2025-03-28T10:55:17.269Z - There are 1 open connections. Reset inactivity timer.
