@@ -9,7 +9,6 @@ Cargo.lock
 yarn.lock
 package-lock.json
 target/
-.nx
 
 # Logs
 logs
@@ -49,4 +48,5 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 .next/
+.nx/
 .anchor/
