@@ -1,8 +1,8 @@
 {
   "run": {
     "command": "nx run anchor:jest",
-    "startTime": "2025-03-26T13:41:04.849Z",
-    "endTime": "2025-03-26T13:41:11.034Z",
+    "startTime": "2025-03-29T04:56:23.958Z",
+    "endTime": "2025-03-29T04:56:28.235Z",
     "inner": false
   },
   "tasks": [
@@ -10,9 +10,9 @@
       "taskId": "anchor:jest",
       "target": "jest",
       "projectName": "anchor",
-      "hash": "1832190902187694472",
-      "startTime": "2025-03-26T13:41:04.855Z",
-      "endTime": "2025-03-26T13:41:11.034Z",
+      "hash": "14621852839754313728",
+      "startTime": "2025-03-29T04:56:23.973Z",
+      "endTime": "2025-03-29T04:56:28.234Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 0

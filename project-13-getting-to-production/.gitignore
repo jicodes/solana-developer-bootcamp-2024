@@ -4,3 +4,4 @@ target
 node_modules
 test-ledger
 .yarn
+web/.next/static/webpack/

@@ -41,6 +41,8 @@ describe('Voting', () => {
       votingAddress,
     )
 
+    console.log("Poll Address:", pollAddress.toBase58());
+
     const poll = await votingProgram.account.poll.fetch(pollAddress);
 
     console.log(poll);
